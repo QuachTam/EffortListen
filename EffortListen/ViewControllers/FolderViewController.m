@@ -87,6 +87,7 @@
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
     
 }
 
