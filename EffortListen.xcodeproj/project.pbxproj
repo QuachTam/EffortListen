@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D1418A31011026419A6EA48 /* libPods-EffortListen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4630938C6C7D6A5FB65A36B /* libPods-EffortListen.a */; };
+		FB3036991CA14AE300186849 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036981CA14AE300186849 /* main.m */; };
+		FB30369C1CA14AE300186849 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB30369B1CA14AE300186849 /* AppDelegate.m */; };
+		FB3036A21CA14AE300186849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3036A01CA14AE300186849 /* Main.storyboard */; };
+		FB3036A51CA14AE300186849 /* EffortListen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB3036A31CA14AE300186849 /* EffortListen.xcdatamodeld */; };
+		FB3036A71CA14AE300186849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3036A61CA14AE300186849 /* Assets.xcassets */; };
+		FB3036AA1CA14AE300186849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3036A81CA14AE300186849 /* LaunchScreen.storyboard */; };
+		FB3036B41CA14CBA00186849 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036B31CA14CBA00186849 /* LoginViewController.m */; };
+		FB3036B71CA1546E00186849 /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036B61CA1546E00186849 /* FolderViewController.m */; };
+		FB3036BF1CA15C6700186849 /* ModelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036BA1CA15C6700186849 /* ModelItem.m */; };
+		FB3036C01CA15C6700186849 /* ObjectsPaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036BC1CA15C6700186849 /* ObjectsPaginator.m */; };
+		FB3036C11CA15C6700186849 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036BE1CA15C6700186849 /* Storage.m */; };
+		FB3036C51CA15E7300186849 /* FolderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036C41CA15E7300186849 /* FolderTableViewCell.m */; };
+		FB3036CE1CA1673800186849 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036C71CA1673800186849 /* CustomCellBackground.m */; };
+		FB3036CF1CA1673800186849 /* CustomCellCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036C91CA1673800186849 /* CustomCellCommon.m */; };
+		FB3036D01CA1673800186849 /* CustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CB1CA1673800186849 /* CustomFooter.m */; };
+		FB3036D11CA1673800186849 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CD1CA1673800186849 /* CustomHeader.m */; };
+		FB3036D41CA1677F00186849 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036D31CA1677F00186849 /* Common.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		69FA443079B7DFA8FA373DD9 /* Pods-EffortListen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortListen.release.xcconfig"; path = "Pods/Target Support Files/Pods-EffortListen/Pods-EffortListen.release.xcconfig"; sourceTree = "<group>"; };
+		E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortListen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EffortListen/Pods-EffortListen.debug.xcconfig"; sourceTree = "<group>"; };
+		F4630938C6C7D6A5FB65A36B /* libPods-EffortListen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EffortListen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB3036941CA14AE300186849 /* EffortListen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffortListen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB3036981CA14AE300186849 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB30369A1CA14AE300186849 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB30369B1CA14AE300186849 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB3036A11CA14AE300186849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB3036A41CA14AE300186849 /* EffortListen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EffortListen.xcdatamodel; sourceTree = "<group>"; };
+		FB3036A61CA14AE300186849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB3036A91CA14AE300186849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB3036AB1CA14AE300186849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB3036B11CA14BDF00186849 /* EffortListen-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EffortListen-Prefix.pch"; sourceTree = "<group>"; };
+		FB3036B21CA14CBA00186849 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FB3036B31CA14CBA00186849 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FB3036B51CA1546E00186849 /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
+		FB3036B61CA1546E00186849 /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
+		FB3036B91CA15C6700186849 /* ModelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelItem.h; sourceTree = "<group>"; };
+		FB3036BA1CA15C6700186849 /* ModelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelItem.m; sourceTree = "<group>"; };
+		FB3036BB1CA15C6700186849 /* ObjectsPaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectsPaginator.h; sourceTree = "<group>"; };
+		FB3036BC1CA15C6700186849 /* ObjectsPaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectsPaginator.m; sourceTree = "<group>"; };
+		FB3036BD1CA15C6700186849 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		FB3036BE1CA15C6700186849 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
+		FB3036C31CA15E7300186849 /* FolderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderTableViewCell.h; sourceTree = "<group>"; };
+		FB3036C41CA15E7300186849 /* FolderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderTableViewCell.m; sourceTree = "<group>"; };
+		FB3036C61CA1673800186849 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
+		FB3036C71CA1673800186849 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
+		FB3036C81CA1673800186849 /* CustomCellCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellCommon.h; sourceTree = "<group>"; };
+		FB3036C91CA1673800186849 /* CustomCellCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellCommon.m; sourceTree = "<group>"; };
+		FB3036CA1CA1673800186849 /* CustomFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFooter.h; sourceTree = "<group>"; };
+		FB3036CB1CA1673800186849 /* CustomFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFooter.m; sourceTree = "<group>"; };
+		FB3036CC1CA1673800186849 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
+		FB3036CD1CA1673800186849 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
+		FB3036D21CA1677F00186849 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		FB3036D31CA1677F00186849 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB3036911CA14AE300186849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1418A31011026419A6EA48 /* libPods-EffortListen.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2823E95D6C52704490D5EEBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */,
+				69FA443079B7DFA8FA373DD9 /* Pods-EffortListen.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7D21BDC39208A46497D56363 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4630938C6C7D6A5FB65A36B /* libPods-EffortListen.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB30368B1CA14AE300186849 = {
+			isa = PBXGroup;
+			children = (
+				FB3036961CA14AE300186849 /* EffortListen */,
+				FB3036951CA14AE300186849 /* Products */,
+				2823E95D6C52704490D5EEBB /* Pods */,
+				7D21BDC39208A46497D56363 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB3036951CA14AE300186849 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB3036941CA14AE300186849 /* EffortListen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB3036961CA14AE300186849 /* EffortListen */ = {
+			isa = PBXGroup;
+			children = (
+				FB3036C21CA15E5600186849 /* CustomCell */,
+				FB30369A1CA14AE300186849 /* AppDelegate.h */,
+				FB30369B1CA14AE300186849 /* AppDelegate.m */,
+				FB3036B21CA14CBA00186849 /* LoginViewController.h */,
+				FB3036B31CA14CBA00186849 /* LoginViewController.m */,
+				FB3036B51CA1546E00186849 /* FolderViewController.h */,
+				FB3036B61CA1546E00186849 /* FolderViewController.m */,
+				FB3036B81CA15C6700186849 /* FolderItems */,
+				FB3036A01CA14AE300186849 /* Main.storyboard */,
+				FB3036A61CA14AE300186849 /* Assets.xcassets */,
+				FB3036A81CA14AE300186849 /* LaunchScreen.storyboard */,
+				FB3036AB1CA14AE300186849 /* Info.plist */,
+				FB3036A31CA14AE300186849 /* EffortListen.xcdatamodeld */,
+				FB3036971CA14AE300186849 /* Supporting Files */,
+			);
+			path = EffortListen;
+			sourceTree = "<group>";
+		};
+		FB3036971CA14AE300186849 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB3036B11CA14BDF00186849 /* EffortListen-Prefix.pch */,
+				FB3036981CA14AE300186849 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB3036B81CA15C6700186849 /* FolderItems */ = {
+			isa = PBXGroup;
+			children = (
+				FB3036B91CA15C6700186849 /* ModelItem.h */,
+				FB3036BA1CA15C6700186849 /* ModelItem.m */,
+				FB3036BB1CA15C6700186849 /* ObjectsPaginator.h */,
+				FB3036BC1CA15C6700186849 /* ObjectsPaginator.m */,
+				FB3036BD1CA15C6700186849 /* Storage.h */,
+				FB3036BE1CA15C6700186849 /* Storage.m */,
+			);
+			path = FolderItems;
+			sourceTree = "<group>";
+		};
+		FB3036C21CA15E5600186849 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB3036D21CA1677F00186849 /* Common.h */,
+				FB3036D31CA1677F00186849 /* Common.m */,
+				FB3036C61CA1673800186849 /* CustomCellBackground.h */,
+				FB3036C71CA1673800186849 /* CustomCellBackground.m */,
+				FB3036C81CA1673800186849 /* CustomCellCommon.h */,
+				FB3036C91CA1673800186849 /* CustomCellCommon.m */,
+				FB3036CA1CA1673800186849 /* CustomFooter.h */,
+				FB3036CB1CA1673800186849 /* CustomFooter.m */,
+				FB3036CC1CA1673800186849 /* CustomHeader.h */,
+				FB3036CD1CA1673800186849 /* CustomHeader.m */,
+				FB3036C31CA15E7300186849 /* FolderTableViewCell.h */,
+				FB3036C41CA15E7300186849 /* FolderTableViewCell.m */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB3036931CA14AE300186849 /* EffortListen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB3036AE1CA14AE300186849 /* Build configuration list for PBXNativeTarget "EffortListen" */;
+			buildPhases = (
+				AEE7C051A2F095127D27B26B /* Check Pods Manifest.lock */,
+				FB3036901CA14AE300186849 /* Sources */,
+				FB3036911CA14AE300186849 /* Frameworks */,
+				FB3036921CA14AE300186849 /* Resources */,
+				5724EF7C16549EA49BCB577D /* Embed Pods Frameworks */,
+				D89660C8DAE6168EF3EDC7C8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EffortListen;
+			productName = EffortListen;
+			productReference = FB3036941CA14AE300186849 /* EffortListen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB30368C1CA14AE300186849 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Tamqn;
+				TargetAttributes = {
+					FB3036931CA14AE300186849 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = FB30368F1CA14AE300186849 /* Build configuration list for PBXProject "EffortListen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB30368B1CA14AE300186849;
+			productRefGroup = FB3036951CA14AE300186849 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB3036931CA14AE300186849 /* EffortListen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB3036921CA14AE300186849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB3036AA1CA14AE300186849 /* LaunchScreen.storyboard in Resources */,
+				FB3036A71CA14AE300186849 /* Assets.xcassets in Resources */,
+				FB3036A21CA14AE300186849 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5724EF7C16549EA49BCB577D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EffortListen/Pods-EffortListen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEE7C051A2F095127D27B26B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D89660C8DAE6168EF3EDC7C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EffortListen/Pods-EffortListen-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB3036901CA14AE300186849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB3036BF1CA15C6700186849 /* ModelItem.m in Sources */,
+				FB3036C11CA15C6700186849 /* Storage.m in Sources */,
+				FB3036C01CA15C6700186849 /* ObjectsPaginator.m in Sources */,
+				FB3036B41CA14CBA00186849 /* LoginViewController.m in Sources */,
+				FB3036B71CA1546E00186849 /* FolderViewController.m in Sources */,
+				FB30369C1CA14AE300186849 /* AppDelegate.m in Sources */,
+				FB3036D41CA1677F00186849 /* Common.m in Sources */,
+				FB3036A51CA14AE300186849 /* EffortListen.xcdatamodeld in Sources */,
+				FB3036D01CA1673800186849 /* CustomFooter.m in Sources */,
+				FB3036D11CA1673800186849 /* CustomHeader.m in Sources */,
+				FB3036C51CA15E7300186849 /* FolderTableViewCell.m in Sources */,
+				FB3036CE1CA1673800186849 /* CustomCellBackground.m in Sources */,
+				FB3036991CA14AE300186849 /* main.m in Sources */,
+				FB3036CF1CA1673800186849 /* CustomCellCommon.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB3036A01CA14AE300186849 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB3036A11CA14AE300186849 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB3036A81CA14AE300186849 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB3036A91CA14AE300186849 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB3036AC1CA14AE300186849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB3036AD1CA14AE300186849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB3036AF1CA14AE300186849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EffortListen/EffortListen-Prefix.pch";
+				INFOPLIST_FILE = EffortListen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qsoft.EffortListen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB3036B01CA14AE300186849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69FA443079B7DFA8FA373DD9 /* Pods-EffortListen.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EffortListen/EffortListen-Prefix.pch";
+				INFOPLIST_FILE = EffortListen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qsoft.EffortListen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB30368F1CA14AE300186849 /* Build configuration list for PBXProject "EffortListen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB3036AC1CA14AE300186849 /* Debug */,
+				FB3036AD1CA14AE300186849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB3036AE1CA14AE300186849 /* Build configuration list for PBXNativeTarget "EffortListen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB3036AF1CA14AE300186849 /* Debug */,
+				FB3036B01CA14AE300186849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB3036A31CA14AE300186849 /* EffortListen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FB3036A41CA14AE300186849 /* EffortListen.xcdatamodel */,
+			);
+			currentVersion = FB3036A41CA14AE300186849 /* EffortListen.xcdatamodel */;
+			path = EffortListen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FB30368C1CA14AE300186849 /* Project object */;
+}
