@@ -20,12 +20,12 @@
     QBUUser *currentUser = [QBUUser new];
     currentUser.email = @"mr.tamqn87hb@gmail.com";
     currentUser.password = @"Quachtam87";
-    [SVProgressHUD showWithStatus:@"Logging in" maskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD showWithStatus:@"Logging in"];
     __weak __typeof(self)weakSelf = self;
     [QMServicesManager.instance logInWithUser:currentUser completion:^(BOOL success, NSString *errorMessage) {
         if (success) {
             __typeof(self) strongSelf = weakSelf;
-            [SVProgressHUD showSuccessWithStatus:@"Logged in"];
+            [SVProgressHUD dismiss];
             [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
         } else {
             [SVProgressHUD showErrorWithStatus:@"Error"];

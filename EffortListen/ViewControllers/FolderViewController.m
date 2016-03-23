@@ -11,6 +11,7 @@
 #import "ObjectsPaginator.h"
 #import "Storage.h"
 #import "FolderTableViewCell.h"
+#import "BookViewController.h"
 
 @interface FolderViewController ()<NMPaginatorDelegate>
 @property (nonatomic, strong) ObjectsPaginator *paginator;
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     // Do any additional setup after loading the view.
-    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD showWithStatus:@"Loading"];
     self.paginator = [[ObjectsPaginator alloc] initWithPageSize:10 delegate:self];
     [self.paginator fetchFirstPage];
 }
@@ -37,7 +38,7 @@
 #pragma mark Paginator
 
 - (void)fetchNextPage {
-    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD showWithStatus:@"Loading"];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.paginator fetchNextPage];
     });
@@ -84,18 +85,17 @@
     cell.name.text = object_custom.fields[@"name"];
 }
 
-
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
-    
+    [self performSegueWithIdentifier:@"bookSegue" sender:object_custom];
 }
 
 - (CGFloat)heightForBasicCellAtIndexPaths:(NSIndexPath *)indexPath tableView:(UITableView*)tableView{
     static FolderTableViewCell *sizingCell = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sizingCell = [tableView dequeueReusableCellWithIdentifier:@"itemCell"];
+        sizingCell = [tableView dequeueReusableCellWithIdentifier:@"FolderTableViewCell"];
     });
     
     [self configureformTableViewCell:sizingCell atIndexPath:indexPath tableView:tableView];
@@ -112,6 +112,13 @@
     return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"bookSegue"]) {
+        // Get reference to the destination view controller
+        BookViewController *bookVC = [segue destinationViewController];
+        bookVC.customObject = (QBCOCustomObject *)sender;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

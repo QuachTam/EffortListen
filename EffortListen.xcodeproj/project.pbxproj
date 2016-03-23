@@ -25,6 +25,9 @@
 		FB3036D01CA1673800186849 /* CustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CB1CA1673800186849 /* CustomFooter.m */; };
 		FB3036D11CA1673800186849 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CD1CA1673800186849 /* CustomHeader.m */; };
 		FB3036D41CA1677F00186849 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036D31CA1677F00186849 /* Common.m */; };
+		FB6763F21CA24EC700344306 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763F11CA24EC700344306 /* BookViewController.m */; };
+		FB6763F91CA2868800344306 /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763F81CA2868800344306 /* BookService.m */; };
+		FB6763FC1CA2A61100344306 /* PlaySoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,12 @@
 		FB3036CD1CA1673800186849 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
 		FB3036D21CA1677F00186849 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		FB3036D31CA1677F00186849 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		FB6763F01CA24EC700344306 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		FB6763F11CA24EC700344306 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		FB6763F71CA2868800344306 /* BookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookService.h; sourceTree = "<group>"; };
+		FB6763F81CA2868800344306 /* BookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookService.m; sourceTree = "<group>"; };
+		FB6763FA1CA2A61100344306 /* PlaySoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySoundViewController.h; sourceTree = "<group>"; };
+		FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySoundViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +108,14 @@
 			children = (
 				A57718021CA18C5D00102307 /* AppDelegate.h */,
 				A57718031CA18C5D00102307 /* AppDelegate.m */,
-				A57718041CA18C5D00102307 /* FolderViewController.h */,
-				A57718051CA18C5D00102307 /* FolderViewController.m */,
 				A57718061CA18C5D00102307 /* LoginViewController.h */,
 				A57718071CA18C5D00102307 /* LoginViewController.m */,
+				A57718041CA18C5D00102307 /* FolderViewController.h */,
+				A57718051CA18C5D00102307 /* FolderViewController.m */,
+				FB6763F01CA24EC700344306 /* BookViewController.h */,
+				FB6763F11CA24EC700344306 /* BookViewController.m */,
+				FB6763FA1CA2A61100344306 /* PlaySoundViewController.h */,
+				FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -128,6 +141,7 @@
 		FB3036961CA14AE300186849 /* EffortListen */ = {
 			isa = PBXGroup;
 			children = (
+				FB6763F61CA284A600344306 /* Services */,
 				A57718011CA18C5D00102307 /* ViewControllers */,
 				FB3036C21CA15E5600186849 /* CustomCell */,
 				FB3036B81CA15C6700186849 /* FolderItems */,
@@ -180,6 +194,15 @@
 				FB3036C41CA15E7300186849 /* FolderTableViewCell.m */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		FB6763F61CA284A600344306 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FB6763F71CA2868800344306 /* BookService.h */,
+				FB6763F81CA2868800344306 /* BookService.m */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,13 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6763F21CA24EC700344306 /* BookViewController.m in Sources */,
 				FB3036BF1CA15C6700186849 /* ModelItem.m in Sources */,
 				FB3036C11CA15C6700186849 /* Storage.m in Sources */,
 				FB3036C01CA15C6700186849 /* ObjectsPaginator.m in Sources */,
+				FB6763F91CA2868800344306 /* BookService.m in Sources */,
 				FB3036D41CA1677F00186849 /* Common.m in Sources */,
 				A577180A1CA18C5D00102307 /* LoginViewController.m in Sources */,
 				FB3036A51CA14AE300186849 /* EffortListen.xcdatamodeld in Sources */,
 				FB3036D01CA1673800186849 /* CustomFooter.m in Sources */,
+				FB6763FC1CA2A61100344306 /* PlaySoundViewController.m in Sources */,
 				FB3036D11CA1673800186849 /* CustomHeader.m in Sources */,
 				FB3036C51CA15E7300186849 /* FolderTableViewCell.m in Sources */,
 				FB3036CE1CA1673800186849 /* CustomCellBackground.m in Sources */,

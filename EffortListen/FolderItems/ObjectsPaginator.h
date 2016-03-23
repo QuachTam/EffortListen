@@ -10,5 +10,5 @@
 #import "NMPaginator.h"
 
 @interface ObjectsPaginator : NMPaginator
-
+@property (nonatomic, strong) NSString *objectName;
 @end

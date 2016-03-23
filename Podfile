@@ -4,4 +4,5 @@ target 'EffortListen' do
     pod 'QMServices'
   	pod 'QuickBlox'
     pod 'NMPaginator'
+    pod 'KRVideoPlayer'
 end
