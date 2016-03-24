@@ -11,6 +11,8 @@
 #import "FolderTableViewCell.h"
 #import "BookService.h"
 #import "PlaySoundViewController.h"
+#import "ReaderPDF.h"
+#import "PlaySound.h"
 
 @interface BookViewController ()
 @property (nonatomic, strong) NSArray *bookList;
@@ -32,6 +34,7 @@
         [self.tbView reloadData];
     };
     [service getListBlobWithID:self.customObject.fields[@"contentID"]];
+    self.title = @"Files";
 }
 
 #pragma mark - Table view data source
@@ -54,12 +57,22 @@
     // some code for initializing cell content
     QBCBlob *blob = [self.bookList objectAtIndex:indexPath.row];
     cell.name.text = blob.name;
+    cell.buttonRun.tag = indexPath.row;
+    if ([blob.contentType isEqualToString:@"application/pdf"]) {
+        [cell.buttonRun setImage:[UIImage imageNamed:@"bookShow"] forState:UIControlStateNormal];
+        [cell.buttonRun addTarget:self action:@selector(showBook:) forControlEvents:UIControlEventTouchUpInside];
+    }else{
+        [cell.buttonRun setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [cell.buttonRun addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QBCBlob *blob = [self.bookList objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"playSound" sender:blob.privateUrl];
+    if (![blob.contentType isEqualToString:@"application/pdf"]) {
+        [self performSegueWithIdentifier:@"playSound" sender:indexPath];
+    }
 }
 
 - (CGFloat)heightForBasicCellAtIndexPaths:(NSIndexPath *)indexPath tableView:(UITableView*)tableView{
@@ -88,10 +101,23 @@
         // Get reference to the destination view controller
         UINavigationController *nv = [segue destinationViewController];
         PlaySoundViewController *bookVC = [nv.viewControllers objectAtIndex:0];
-        NSString *url = (NSString*)sender;
-        bookVC.currentIndexURL = 0;
-        bookVC.arrayURL = @[url, url];
+            
+        NSIndexPath *indexPath = (NSIndexPath*)sender;
+        bookVC.currentIndexBook = indexPath.row;
+        bookVC.bookList = self.bookList;
     }
+}
+
+- (void)showBook:(id)sender {
+    ReaderPDF *reader = [ReaderPDF instance];
+    [reader ShowReaderDoccumentWithName:nil inVC:self];
+}
+
+- (void)playSound:(id)sender {
+    QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
+    PlaySound *play = [PlaySound instance];
+    [play showVideoWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
+    [play playWithURLString:blobCurrent.privateUrl];
 }
 
 - (void)didReceiveMemoryWarning {

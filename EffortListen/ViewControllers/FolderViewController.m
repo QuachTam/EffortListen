@@ -26,6 +26,21 @@
     [SVProgressHUD showWithStatus:@"Loading"];
     self.paginator = [[ObjectsPaginator alloc] initWithPageSize:10 delegate:self];
     [self.paginator fetchFirstPage];
+    self.title = @"Folders";
+    [self rightButton];
+}
+
+- (void)rightButton {
+    UIButton *btnRight=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnRight setFrame:CGRectMake(0, 0, 25, 25)];
+    [btnRight setImage:[UIImage imageNamed:@"brightLight"] forState:UIControlStateNormal];
+    [btnRight addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnRight];
+    [self.navigationItem setRightBarButtonItem:rightBarButton];
+}
+
+- (void)rightAction {
+    [self performSegueWithIdentifier:@"suggest" sender:nil];
 }
 
 - (void)paginator:(id)paginator didReceiveResults:(NSArray *)results {
@@ -83,6 +98,7 @@
     // some code for initializing cell content
     QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
     cell.name.text = object_custom.fields[@"name"];
+    cell.numberBook.text = [NSString stringWithFormat:@"%d", [object_custom.fields[@"contentID"] count]];
 }
 
 #pragma mark - Table view delegate

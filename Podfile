@@ -5,4 +5,5 @@ target 'EffortListen' do
   	pod 'QuickBlox'
     pod 'NMPaginator'
     pod 'KRVideoPlayer'
+    pod 'PureLayout'
 end

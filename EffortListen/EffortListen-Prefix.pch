@@ -16,4 +16,9 @@
     #import <Quickblox/Quickblox.h>
     #import <QMServices.h>
     #import <SVProgressHUD.h>
+    #import <PureLayout/PureLayout.h>
+    #import <CoreGraphics/CoreGraphics.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <ImageIO/ImageIO.h>
+    #import "CommonFeature.h"
 #endif

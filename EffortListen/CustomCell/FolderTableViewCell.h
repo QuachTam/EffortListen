@@ -7,8 +7,11 @@
 //
 
 #import "CustomCellCommon.h"
+#import "RWLabel.h"
 
 @interface FolderTableViewCell : CustomCellCommon
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet RWLabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *numberBook;
+@property (weak, nonatomic) IBOutlet UIButton *buttonRun;
 
 @end

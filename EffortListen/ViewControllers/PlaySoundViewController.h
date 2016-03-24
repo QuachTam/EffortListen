@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <KRVideoPlayerController.h>
 
 @interface PlaySoundViewController : UIViewController
-@property (nonatomic, strong) NSArray *arrayURL;
-@property (nonatomic, readwrite) NSInteger currentIndexURL;
+@property (weak, nonatomic) IBOutlet UITableView *tbView;
+- (IBAction)cancelAction:(id)sender;
+- (IBAction)readBookAction:(id)sender;
+@property (nonatomic, strong) NSArray *bookList;
+@property (nonatomic, readwrite) NSInteger currentIndexBook;
 @end
