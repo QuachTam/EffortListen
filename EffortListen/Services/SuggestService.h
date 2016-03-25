@@ -11,4 +11,5 @@
 @interface SuggestService : NSObject
 + (instancetype)instance;
 - (void)sendSuggestBook:(NSString *)bookName bookType:(NSString*)bookType linkDownload:(NSString*)linkDownload success:(void(^)(BOOL isSuccess))success;
+- (void)checkDeviceBlock:(void(^)(BOOL isBlock))success;
 @end

@@ -109,8 +109,9 @@
 }
 
 - (void)showBook:(id)sender {
+    QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
     ReaderPDF *reader = [ReaderPDF instance];
-    [reader ShowReaderDoccumentWithName:nil inVC:self];
+    [reader ShowReaderDoccumentWithName:[NSString stringWithFormat:@"%ld", (long)blobCurrent.ID] inVC:self];
 }
 
 - (void)playSound:(id)sender {

@@ -38,4 +38,39 @@
     }];
 }
 
+- (void)checkDeviceBlock:(void(^)(BOOL isBlock))success {
+    [QBRequest objectsWithClassName:@"BlockDevice" successBlock:^(QBResponse * _Nonnull response, NSArray * _Nullable objects) {
+        if (objects.count) {
+            QBCOCustomObject *customObject = [objects firstObject];
+            if ([self isBlockWithArrayDevice:customObject.fields[@"uuidDevice"]]) {
+                if (success) {
+                    success(YES);
+                }
+            }else{
+                if (success) {
+                    success(NO);
+                }
+            }
+        }else{
+            if (success) {
+                success(NO);
+            }
+        }
+    } errorBlock:^(QBResponse * _Nonnull response) {
+        if (success) {
+            success(NO);
+        }
+    }];
+}
+
+- (BOOL)isBlockWithArrayDevice:(NSArray *)arrayBlock {
+    BOOL isBlock = NO;
+    NSString *currentDevice = [CommonFeature deviceUUID];
+    if ([arrayBlock containsObject:currentDevice]) {
+        isBlock = YES;
+    }
+    return isBlock;
+}
+
+
 @end

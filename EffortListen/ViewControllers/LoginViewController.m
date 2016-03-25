@@ -25,53 +25,14 @@
     [QMServicesManager.instance logInWithUser:currentUser completion:^(BOOL success, NSString *errorMessage) {
         if (success) {
             __typeof(self) strongSelf = weakSelf;
-            [self checkDeviceBlock:^(BOOL isBlock) {
-                if (!isBlock) {
-                    [SVProgressHUD dismiss];
-                    [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
-                }else{
-                    [CommonFeature showAlertTitle:@"EffortListen" Message:@"Your device is blocked" duration:3.0 showIn:self blockDismissView:nil];
-                }
-            }];
+            [SVProgressHUD dismiss];
+            [strongSelf performSegueWithIdentifier:@"loginSegue" sender:nil];
         } else {
             [SVProgressHUD showErrorWithStatus:@"Error"];
         }
     }];
 }
 
-- (void)checkDeviceBlock:(void(^)(BOOL isBlock))success {
-    [QBRequest objectsWithClassName:@"BlockDevice" successBlock:^(QBResponse * _Nonnull response, NSArray * _Nullable objects) {
-        if (objects.count) {
-            QBCOCustomObject *customObject = [objects firstObject];
-            if ([self isBlockWithArrayDevice:customObject.fields[@"uuidDevice"]]) {
-                if (success) {
-                    success(YES);
-                }
-            }else{
-                if (success) {
-                    success(NO);
-                }
-            }
-        }else{
-            if (success) {
-                success(NO);
-            }
-        }
-    } errorBlock:^(QBResponse * _Nonnull response) {
-        if (success) {
-            success(NO);
-        }
-    }];
-}
-
-- (BOOL)isBlockWithArrayDevice:(NSArray *)arrayBlock {
-    BOOL isBlock = NO;
-    NSString *currentDevice = [CommonFeature deviceUUID];
-    if ([arrayBlock containsObject:currentDevice]) {
-        isBlock = YES;
-    }
-    return isBlock;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -79,13 +40,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

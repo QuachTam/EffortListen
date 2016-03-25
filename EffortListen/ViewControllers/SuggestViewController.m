@@ -78,9 +78,16 @@
     
     if (isValid) {
         SuggestService *service = [SuggestService instance];
-        [service sendSuggestBook:self.bookNameTextField.text bookType:self.bookTypeTextField.text linkDownload:self.linkDownloadTextField.text success:^(BOOL isSuccess) {
-            [CommonFeature showAlertTitle:@"EffortListen" Message:@"Thanks your send suggest" duration:2.0 showIn:self blockDismissView:nil];
+        [service checkDeviceBlock:^(BOOL isBlock) {
+            if (!isBlock) {
+                [service sendSuggestBook:self.bookNameTextField.text bookType:self.bookTypeTextField.text linkDownload:self.linkDownloadTextField.text success:^(BOOL isSuccess) {
+                    [CommonFeature showAlertTitle:@"EffortListen" Message:@"Thanks your send suggest" duration:2.0 showIn:self blockDismissView:nil];
+                }];
+            }else{
+                [CommonFeature showAlertTitle:@"EffortListen" Message:@"Your device is blocked" duration:3.0 showIn:self blockDismissView:nil];
+            }
         }];
     }
 }
+
 @end

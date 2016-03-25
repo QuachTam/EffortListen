@@ -105,6 +105,7 @@
 		FB9E9D261CA3F13C0007ACDA /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9E9D241CA3F13C0007ACDA /* play@2x.png */; };
 		FB9E9D291CA3F9040007ACDA /* PlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E9D281CA3F9040007ACDA /* PlaySound.m */; };
 		FB9E9D2C1CA3FC860007ACDA /* ReaderPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */; };
+		FBFC2FA61CA4F5790043F354 /* TQNDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC2FA51CA4F5790043F354 /* TQNDocument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -255,6 +256,8 @@
 		FB9E9D281CA3F9040007ACDA /* PlaySound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySound.m; sourceTree = "<group>"; };
 		FB9E9D2A1CA3FC860007ACDA /* ReaderPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderPDF.h; sourceTree = "<group>"; };
 		FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderPDF.m; sourceTree = "<group>"; };
+		FBFC2FA41CA4F5790043F354 /* TQNDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQNDocument.h; sourceTree = "<group>"; };
+		FBFC2FA51CA4F5790043F354 /* TQNDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQNDocument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -539,6 +542,8 @@
 				FB9E9D281CA3F9040007ACDA /* PlaySound.m */,
 				FB9E9D2A1CA3FC860007ACDA /* ReaderPDF.h */,
 				FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */,
+				FBFC2FA41CA4F5790043F354 /* TQNDocument.h */,
+				FBFC2FA51CA4F5790043F354 /* TQNDocument.m */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -756,6 +761,7 @@
 				A57718081CA18C5D00102307 /* AppDelegate.m in Sources */,
 				FB9E9CA61CA3C7F30007ACDA /* CGPDFDocument.m in Sources */,
 				FB9E9CAB1CA3C7F30007ACDA /* ReaderDocument.m in Sources */,
+				FBFC2FA61CA4F5790043F354 /* TQNDocument.m in Sources */,
 				FB9E9CAD1CA3C7F30007ACDA /* ReaderMainPagebar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
