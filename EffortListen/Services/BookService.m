@@ -7,6 +7,7 @@
 //
 
 #import "BookService.h"
+#import "TQNDocument.h"
 
 @interface BookService ()
 @property (nonatomic, strong) NSMutableArray *arrayBlobs;
@@ -86,5 +87,29 @@
     if (self.arrayIDs.count) {
         [self.arrayIDs removeObjectAtIndex:0];
     }
+}
+
+- (void)downloadFileWith:(QBCBlob *)blob statusBlock:(void(^)(QBRequestStatus * status))statusBlock success:(void(^)(BOOL isSuccess))success {
+    [QBRequest downloadFileWithID:blob.ID successBlock:^(QBResponse * _Nonnull response, NSData * _Nonnull fileData) {
+        if (fileData) {
+            TQNDocument *document = [TQNDocument instance];
+            [document saveFileToDocument:fileData directory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blob.ID]];
+            if (success) {
+                success(YES);
+            }
+        }else{
+            if (success) {
+                success(NO);
+            }
+        }
+    } statusBlock:^(QBRequest * _Nonnull request, QBRequestStatus * _Nullable status) {
+        if (statusBlock) {
+            statusBlock (status);
+        }
+    } errorBlock:^(QBResponse * _Nonnull response) {
+        if (success) {
+            success(NO);
+        }
+    }];
 }
 @end

@@ -10,5 +10,5 @@
 
 @interface ReaderPDF : NSObject
 + (instancetype)instance;
-- (void)ShowReaderDoccumentWithName:(NSString *)name inVC:(UIViewController *)selfView;
+- (void)ShowReaderDoccumentWithName:(NSString *)documentFile inVC:(UIViewController *)selfView;
 @end

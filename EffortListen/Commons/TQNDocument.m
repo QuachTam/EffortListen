@@ -30,11 +30,11 @@
 
 #pragma mark CREATE
 - (void)createDirectory:(NSString *)folderName{
-    NSString *docPath = [self getDocumentsPath];
-    NSString *booksDir=docPath;
-    if (folderName && folderName.length>0) {
-        booksDir = [docPath stringByAppendingPathComponent:folderName];
+    if (!folderName || folderName.length<=0) {
+        return;
     }
+    NSString *docPath = [self getDocumentsPath];
+    NSString *booksDir = [docPath stringByAppendingPathComponent:folderName];
     NSFileManager *fm =[NSFileManager defaultManager];
     NSError *error;
     if (![fm fileExistsAtPath:booksDir]) {
@@ -44,6 +44,7 @@
 
 #pragma mark GET
 - (NSString*)getDirectory:(NSString *)folderName{
+    [self createDirectory:folderName];
     NSString *docPath = [self getDocumentsPath];
     NSString *booksDir = docPath;
     if (folderName && folderName.length>0) {
@@ -53,9 +54,11 @@
 }
 
 #pragma mark SAVE
-- (NSError *)saveFileToDocument:(NSData *)data directory:(NSString *)directory{
+- (NSError *)saveFileToDocument:(NSData *)data directory:(NSString *)directory fileName:(NSString*)fileName{
     NSError *error = nil;
-    [data writeToFile:directory options:NSDataWritingAtomic error:&error];
+    NSString *docPath = [self getDirectory:directory];
+    NSString *filePath = [docPath stringByAppendingPathComponent:fileName];
+    [data writeToFile:filePath options:NSDataWritingAtomic error:&error];
     return error;
 }
 
@@ -65,6 +68,18 @@
     NSString *directoryPath = [self getDirectory:directory];
     NSString *filePath = [directoryPath stringByAppendingPathComponent:fileName];
     return filePath;
+}
+
+#pragma mark CHECK FILE EXIST
+
+- (BOOL)checkFileExist:(NSString *)directory fileName:(NSString*)fileName {
+    NSString *docPath = [self getDirectory:directory];
+    NSString *filePath = [docPath stringByAppendingPathComponent:fileName];
+    NSFileManager *fm =[NSFileManager defaultManager];
+    if (![fm fileExistsAtPath:filePath]) {
+        return NO;
+    }
+    return YES;
 }
 
 @end

@@ -12,4 +12,5 @@
 @property (nonatomic, readwrite, copy) void(^didCompleteFetchBlob)(NSArray *blobs);
 + (instancetype)instance;
 - (void)getListBlobWithID:(NSArray *)arrayID;
+- (void)downloadFileWith:(QBCBlob *)blob statusBlock:(void(^)(QBRequestStatus * status))statusBlock success:(void(^)(BOOL isSuccess))success;
 @end

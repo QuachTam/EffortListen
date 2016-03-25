@@ -106,6 +106,8 @@
 		FB9E9D291CA3F9040007ACDA /* PlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E9D281CA3F9040007ACDA /* PlaySound.m */; };
 		FB9E9D2C1CA3FC860007ACDA /* ReaderPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */; };
 		FBFC2FA61CA4F5790043F354 /* TQNDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC2FA51CA4F5790043F354 /* TQNDocument.m */; };
+		FBFC2FA91CA52AD50043F354 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA71CA52AD50043F354 /* back@2x.png */; };
+		FBFC2FAA1CA52AD50043F354 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA81CA52AD50043F354 /* back@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -258,6 +260,8 @@
 		FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderPDF.m; sourceTree = "<group>"; };
 		FBFC2FA41CA4F5790043F354 /* TQNDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQNDocument.h; sourceTree = "<group>"; };
 		FBFC2FA51CA4F5790043F354 /* TQNDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQNDocument.m; sourceTree = "<group>"; };
+		FBFC2FA71CA52AD50043F354 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		FBFC2FA81CA52AD50043F354 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,6 +523,8 @@
 		FB9E9D091CA3D3BD0007ACDA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FBFC2FA71CA52AD50043F354 /* back@2x.png */,
+				FBFC2FA81CA52AD50043F354 /* back@3x.png */,
 				FB9E9D231CA3F13C0007ACDA /* play@3x.png */,
 				FB9E9D241CA3F13C0007ACDA /* play@2x.png */,
 				FB9E9D0A1CA3D3CF0007ACDA /* cancel@3x.png */,
@@ -625,6 +631,7 @@
 				FB9E9C9A1CA3C7F30007ACDA /* Reader-Mark-Y.png in Resources */,
 				FB9E9C951CA3C7F30007ACDA /* Reader-Export@2x.png in Resources */,
 				FB9E9CA01CA3C7F30007ACDA /* Reader-Thumbs.png in Resources */,
+				FBFC2FA91CA52AD50043F354 /* back@2x.png in Resources */,
 				FB9E9C901CA3C7F30007ACDA /* Reader-Button-N@3x.png in Resources */,
 				FB9E9C8A1CA3C7F30007ACDA /* Default-736h@3x.png in Resources */,
 				FB9E9C871CA3C7F30007ACDA /* AppIcon-180.png in Resources */,
@@ -641,6 +648,7 @@
 				FB9E9C941CA3C7F30007ACDA /* Reader-Export.png in Resources */,
 				FB9E9C9D1CA3C7F30007ACDA /* Reader-Print.png in Resources */,
 				FB9E9C7F1CA3C7F30007ACDA /* AppIcon-057.png in Resources */,
+				FBFC2FAA1CA52AD50043F354 /* back@3x.png in Resources */,
 				FB9E9C8B1CA3C7F30007ACDA /* Reader-Button-H.png in Resources */,
 				FB9E9C9C1CA3C7F30007ACDA /* Reader-Mark-Y@3x.png in Resources */,
 				FB9E9C831CA3C7F30007ACDA /* AppIcon-120.png in Resources */,

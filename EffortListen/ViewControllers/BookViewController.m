@@ -13,6 +13,7 @@
 #import "PlaySoundViewController.h"
 #import "ReaderPDF.h"
 #import "PlaySound.h"
+#import "TQNDocument.h"
 
 @interface BookViewController ()
 @property (nonatomic, strong) NSArray *bookList;
@@ -35,6 +36,19 @@
     };
     [service getListBlobWithID:self.customObject.fields[@"contentID"]];
     self.title = @"Files";
+}
+
+- (void)backButton {
+    UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnBack setFrame:CGRectMake(0, 0, 25, 25)];
+    [btnBack setImage:[UIImage imageNamed:@"brightLight"] forState:UIControlStateNormal];
+    [btnBack addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnBack];
+    [self.navigationItem setLeftBarButtonItem:backBarButton];
+}
+
+- (void)backView {
+    
 }
 
 #pragma mark - Table view data source
@@ -109,9 +123,32 @@
 }
 
 - (void)showBook:(id)sender {
+    TQNDocument *document = [TQNDocument instance];
     QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
+    if ([document checkFileExist:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]]) {
+        NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+        [SVProgressHUD dismiss];
+        [self readerPDFWithDocumentFile:documentFile];
+    }else{
+        [SVProgressHUD showProgress:0.0 status:@"Downloading..."];
+        BookService *serviceBook = [BookService instance];
+        [serviceBook downloadFileWith:blobCurrent statusBlock:^(QBRequestStatus *status) {
+            [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
+        } success:^(BOOL isSuccess) {
+            [SVProgressHUD dismiss];
+            if (isSuccess) {
+                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+                [self readerPDFWithDocumentFile:documentFile];
+            }else{
+                [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Load file error" duration:2.0 showIn:self blockDismissView:nil];
+            }
+        }];
+    }
+}
+
+- (void)readerPDFWithDocumentFile:(NSString *)documentFile {
     ReaderPDF *reader = [ReaderPDF instance];
-    [reader ShowReaderDoccumentWithName:[NSString stringWithFormat:@"%ld", (long)blobCurrent.ID] inVC:self];
+    [reader ShowReaderDoccumentWithName:documentFile inVC:self];
 }
 
 - (void)playSound:(id)sender {

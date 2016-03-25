@@ -11,4 +11,8 @@
 @interface TQNDocument : NSObject
 + (instancetype)instance;
 - (NSString *)getDocumentsPath;
+
+- (NSString *)getFileInDirectory:(NSString *)directory fileName:(NSString *)fileName; // if directory nil --> get in root document
+- (NSError *)saveFileToDocument:(NSData *)data directory:(NSString *)directory fileName:(NSString*)fileName; // if directory nil --> save in root document
+- (BOOL)checkFileExist:(NSString *)directory fileName:(NSString*)fileName; // // if directory nil --> check in root document
 @end

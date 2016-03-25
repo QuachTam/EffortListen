@@ -35,6 +35,8 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
     // Enables detailed XMPP logging in console output
     [QBSettings enableXMPPLogging];
     
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:139/255.0 green:195/255.0 blue:74/255.0 alpha:1],NSForegroundColorAttributeName,[UIColor colorWithRed:139/255.0 green:195/255.0 blue:74/255.0 alpha:1],NSForegroundColorAttributeName,
       [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],NSForegroundColorAttributeName,[UIFont fontWithName:@"Arial-Bold" size:20],NSFontAttributeName,nil]];
     return YES;

@@ -54,7 +54,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ts-oa-R6X">
                                                     <rect key="frame" x="17" y="11" width="567" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -231,7 +231,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="QMY-DP-l7F"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -322,7 +322,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="JfW-KD-Bun" firstAttribute="leading" secondItem="04D-ep-wkg" secondAttribute="leading" constant="19" id="11r-ol-XdQ"/>
                                     <constraint firstAttribute="trailing" secondItem="JfW-KD-Bun" secondAttribute="trailing" constant="18" id="6aw-H8-Vqg"/>
@@ -340,7 +340,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="04D-ep-wkg" firstAttribute="leading" secondItem="hwU-JZ-ok9" secondAttribute="leading" constant="29" id="2Da-aW-p85"/>
                             <constraint firstItem="04D-ep-wkg" firstAttribute="top" secondItem="jzX-QE-ErP" secondAttribute="bottom" constant="22" id="PDC-pB-RMk"/>

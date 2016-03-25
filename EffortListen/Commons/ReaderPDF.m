@@ -26,12 +26,10 @@
     return instance;
 }
 
-- (void)ShowReaderDoccumentWithName:(NSString *)name inVC:(UIViewController *)selfView{
+- (void)ShowReaderDoccumentWithName:(NSString *)documentFile inVC:(UIViewController *)selfView{
     self.rootVC = selfView;
     NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
-    NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
-    NSString *filePath = [pdfs firstObject]; assert(filePath != nil); // Path to first PDF file
-    ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+    ReaderDocument *document = [ReaderDocument withDocumentFilePath:documentFile password:phrase];
     if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
     {
         ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
@@ -40,7 +38,7 @@
         readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
         [self.rootVC presentViewController:readerViewController animated:YES completion:NULL];
     }else {
-        NSLog(@"%s [ReaderDocument withDocumentFilePath:'%@' password:'%@'] failed.", __FUNCTION__, filePath, phrase);
+        NSLog(@"%s [ReaderDocument withDocumentFilePath:'%@' password:'%@'] failed.", __FUNCTION__, documentFile, phrase);
     }
 }
 
