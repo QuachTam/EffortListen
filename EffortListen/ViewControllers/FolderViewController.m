@@ -28,6 +28,16 @@
     [self.paginator fetchFirstPage];
     self.title = @"Folders";
     [self rightButton];
+    [self leftButton];
+}
+
+- (void)leftButton {
+    UIButton *btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setFrame:CGRectMake(0, 0, 25, 25)];
+    [btnLeft setImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal];
+    [btnLeft addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnLeft];
+    [self.navigationItem setLeftBarButtonItem:leftBarButton];
 }
 
 - (void)rightButton {
@@ -37,6 +47,10 @@
     [btnRight addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnRight];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
+}
+
+- (void)settingAction {
+    [self performSegueWithIdentifier:@"setting" sender:nil];
 }
 
 - (void)rightAction {

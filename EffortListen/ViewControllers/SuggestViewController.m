@@ -24,6 +24,20 @@
     
     self.viewSuggest.layer.cornerRadius = 4.0;
     self.viewSuggest.layer.masksToBounds = YES;
+    [self backButton];
+}
+
+- (void)backButton {
+    UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnBack setFrame:CGRectMake(0, 0, 25, 25)];
+    [btnBack setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [btnBack addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnBack];
+    [self.navigationItem setLeftBarButtonItem:backBarButton];
+}
+
+- (void)backView {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (BOOL)isBookNameTextField {
@@ -77,13 +91,19 @@
     }
     
     if (isValid) {
+        [SVProgressHUD showWithStatus:@"Sending..."];
         SuggestService *service = [SuggestService instance];
         [service checkDeviceBlock:^(BOOL isBlock) {
             if (!isBlock) {
-                [service sendSuggestBook:self.bookNameTextField.text bookType:self.bookTypeTextField.text linkDownload:self.linkDownloadTextField.text success:^(BOOL isSuccess) {
-                    [CommonFeature showAlertTitle:@"EffortListen" Message:@"Thanks your send suggest" duration:2.0 showIn:self blockDismissView:nil];
+                [service sendSuggestBook:self.bookNameTextField.text bookType:self.bookTypeTextField.text linkDownload:self.linkDownloadTextField.text success:^{
+                    [SVProgressHUD dismiss];
+                    [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Thanks your send suggest" duration:2.0 showIn:self blockDismissView:nil];
+                } fail:^(NSString *message) {
+                    [SVProgressHUD dismiss];
+                    [CommonFeature showAlertTitle:@"Effort Listen" Message:message duration:2.0 showIn:self blockDismissView:nil];
                 }];
             }else{
+                [SVProgressHUD dismiss];
                 [CommonFeature showAlertTitle:@"EffortListen" Message:@"Your device is blocked" duration:3.0 showIn:self blockDismissView:nil];
             }
         }];

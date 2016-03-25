@@ -36,19 +36,20 @@
     };
     [service getListBlobWithID:self.customObject.fields[@"contentID"]];
     self.title = @"Files";
+    [self backButton];
 }
 
 - (void)backButton {
     UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
     [btnBack setFrame:CGRectMake(0, 0, 25, 25)];
-    [btnBack setImage:[UIImage imageNamed:@"brightLight"] forState:UIControlStateNormal];
+    [btnBack setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnBack];
     [self.navigationItem setLeftBarButtonItem:backBarButton];
 }
 
 - (void)backView {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -134,6 +135,9 @@
         BookService *serviceBook = [BookService instance];
         [serviceBook downloadFileWith:blobCurrent statusBlock:^(QBRequestStatus *status) {
             [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
+            if (status.percentOfCompletion==1) {
+                [SVProgressHUD dismiss];
+            }
         } success:^(BOOL isSuccess) {
             [SVProgressHUD dismiss];
             if (isSuccess) {

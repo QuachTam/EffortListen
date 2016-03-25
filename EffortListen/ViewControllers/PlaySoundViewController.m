@@ -31,6 +31,21 @@
     PlaySound *play = [PlaySound instance];
     [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
     [play playWithURLString:blobCurrent.privateUrl];
+    
+    [self backButton];
+}
+
+- (void)backButton {
+    UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnBack setFrame:CGRectMake(0, 0, 25, 25)];
+    [btnBack setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [btnBack addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnBack];
+    [self.navigationItem setLeftBarButtonItem:backBarButton];
+}
+
+- (void)backView {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

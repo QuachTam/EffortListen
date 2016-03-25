@@ -108,6 +108,9 @@
 		FBFC2FA61CA4F5790043F354 /* TQNDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC2FA51CA4F5790043F354 /* TQNDocument.m */; };
 		FBFC2FA91CA52AD50043F354 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA71CA52AD50043F354 /* back@2x.png */; };
 		FBFC2FAA1CA52AD50043F354 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA81CA52AD50043F354 /* back@3x.png */; };
+		FBFC2FAD1CA536820043F354 /* setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FAB1CA536820043F354 /* setting@3x.png */; };
+		FBFC2FAE1CA536820043F354 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FAC1CA536820043F354 /* setting@2x.png */; };
+		FBFC2FB11CA538410043F354 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC2FB01CA538410043F354 /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +265,10 @@
 		FBFC2FA51CA4F5790043F354 /* TQNDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQNDocument.m; sourceTree = "<group>"; };
 		FBFC2FA71CA52AD50043F354 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		FBFC2FA81CA52AD50043F354 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		FBFC2FAB1CA536820043F354 /* setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@3x.png"; sourceTree = "<group>"; };
+		FBFC2FAC1CA536820043F354 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
+		FBFC2FAF1CA538410043F354 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		FBFC2FB01CA538410043F354 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +323,8 @@
 				FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */,
 				FB9E9D161CA3DAE10007ACDA /* SuggestViewController.h */,
 				FB9E9D171CA3DAE10007ACDA /* SuggestViewController.m */,
+				FBFC2FAF1CA538410043F354 /* SettingViewController.h */,
+				FBFC2FB01CA538410043F354 /* SettingViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -523,6 +532,8 @@
 		FB9E9D091CA3D3BD0007ACDA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FBFC2FAB1CA536820043F354 /* setting@3x.png */,
+				FBFC2FAC1CA536820043F354 /* setting@2x.png */,
 				FBFC2FA71CA52AD50043F354 /* back@2x.png */,
 				FBFC2FA81CA52AD50043F354 /* back@3x.png */,
 				FB9E9D231CA3F13C0007ACDA /* play@3x.png */,
@@ -620,10 +631,12 @@
 				FB9E9C811CA3C7F30007ACDA /* AppIcon-076.png in Resources */,
 				FB9E9D261CA3F13C0007ACDA /* play@2x.png in Resources */,
 				FB9E9D101CA3D4B60007ACDA /* bookShow@3x.png in Resources */,
+				FBFC2FAD1CA536820043F354 /* setting@3x.png in Resources */,
 				FB3036AA1CA14AE300186849 /* LaunchScreen.storyboard in Resources */,
 				FB9E9C9B1CA3C7F30007ACDA /* Reader-Mark-Y@2x.png in Resources */,
 				FB9E9C971CA3C7F30007ACDA /* Reader-Mark-N.png in Resources */,
 				FB9E9D0C1CA3D3CF0007ACDA /* cancel@3x.png in Resources */,
+				FBFC2FAE1CA536820043F354 /* setting@2x.png in Resources */,
 				FB9E9CA11CA3C7F30007ACDA /* Reader-Thumbs@2x.png in Resources */,
 				FB9E9CA31CA3C7F30007ACDA /* Localizable.strings in Resources */,
 				FB9E9C8E1CA3C7F30007ACDA /* Reader-Button-N.png in Resources */,
@@ -741,6 +754,7 @@
 				FB9E9CB51CA3C7F30007ACDA /* ReaderThumbView.m in Sources */,
 				FB9E9CB91CA3C7F30007ACDA /* UIXToolbarView.m in Sources */,
 				FB9E9CAE1CA3C7F30007ACDA /* ReaderMainToolbar.m in Sources */,
+				FBFC2FB11CA538410043F354 /* SettingViewController.m in Sources */,
 				FB9E9CB81CA3C7F30007ACDA /* ThumbsViewController.m in Sources */,
 				FB6763F91CA2868800344306 /* BookService.m in Sources */,
 				FB9E9CA81CA3C7F30007ACDA /* ReaderContentPage.m in Sources */,
