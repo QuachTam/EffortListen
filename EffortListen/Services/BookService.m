@@ -59,11 +59,11 @@
 }
 
 
-- (void)downloadFileWith:(QBCBlob *)blob statusBlock:(void(^)(QBRequestStatus * status))statusBlock success:(void(^)(BOOL isSuccess))success {
-    [QBRequest downloadFileWithID:blob.ID successBlock:^(QBResponse * _Nonnull response, NSData * _Nonnull fileData) {
+- (void)downloadFileWith:(NSInteger)blobID statusBlock:(void(^)(QBRequestStatus * status))statusBlock success:(void(^)(BOOL isSuccess))success {
+    [QBRequest downloadFileWithID:blobID successBlock:^(QBResponse * _Nonnull response, NSData * _Nonnull fileData) {
         if (fileData) {
             TQNDocument *document = [TQNDocument instance];
-            [document saveFileToDocument:fileData directory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blob.ID]];
+            [document saveFileToDocument:fileData directory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobID]];
             if (success) {
                 success(YES);
             }
@@ -73,8 +73,10 @@
             }
         }
     } statusBlock:^(QBRequest * _Nonnull request, QBRequestStatus * _Nullable status) {
-        if (statusBlock) {
-            statusBlock (status);
+        if (status.percentOfCompletion<1) {
+            if (statusBlock) {
+                statusBlock (status);
+            }
         }
     } errorBlock:^(QBResponse * _Nonnull response) {
         if (success) {

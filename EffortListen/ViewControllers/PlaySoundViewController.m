@@ -29,13 +29,34 @@
     self.selectedIndexPath = self.currentIndexBook;
     [self setUpselectedCellIndexPath];
 
-    QBCBlob *blobCurrent = [self.bookList objectAtIndex:self.currentIndexBook];
-    PlaySound *play = [PlaySound instance];
-    [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
-    [play playWithURLString:blobCurrent.privateUrl];
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:self.currentIndexBook];
+    [SVProgressHUD showWithStatus:@"Loading"];
+    [self getBlobWithID:[object_custom.fields[@"contentID"] integerValue] success:^(QBCBlob *blob) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        PlaySound *play = [PlaySound instance];
+        [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
+        [play playWithURLString:blob.privateUrl];
+    } fail:^{
+        [SVProgressHUD showErrorWithStatus:@"Server error"];
+    }];
+}
+
+- (void)getBlobWithID:(NSInteger)ID success:(void(^)(QBCBlob *blob))success fail:(void(^)(void))fail{
+    [QBRequest blobWithID:ID successBlock:^(QBResponse * _Nonnull response, QBCBlob * _Nullable blob) {
+        if (success) {
+            success(blob);
+        }
+    } errorBlock:^(QBResponse * _Nonnull response) {
+        if (fail) {
+            fail();
+        }
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
 }
 
 #pragma mark - Table view data source
@@ -65,8 +86,8 @@
 
 - (void)configureformTableViewCell:(FolderTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView*)tableView{
     // some code for initializing cell content
-    QBCBlob *blob = [self.bookList objectAtIndex:indexPath.row];
-    cell.name.text = blob.name;
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:indexPath.row];
+    cell.name.text = object_custom.fields[@"name"];
     if(indexPath.row == self.selectedIndexPath) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }else {
@@ -77,11 +98,20 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath   *)indexPath {
-    QBCBlob *blob = [self.bookList objectAtIndex:indexPath.row];
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:indexPath.row];
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     self.selectedIndexPath = indexPath.row;
-    PlaySound *play = [PlaySound instance];
-    [play playWithURLString:blob.privateUrl];
+    [SVProgressHUD showWithStatus:@"Loading"];
+    [self getBlobWithID:[object_custom.fields[@"contentID"] integerValue] success:^(QBCBlob *blob) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        PlaySound *play = [PlaySound instance];
+        [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
+        [play playWithURLString:blob.privateUrl];
+    } fail:^{
+        [SVProgressHUD showErrorWithStatus:@"Server error"];
+    }];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -134,24 +164,21 @@
 
 - (IBAction)readBookAction:(id)sender {
     TQNDocument *document = [TQNDocument instance];
-    QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
-    if ([document checkFileExist:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]]) {
-        NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:self.selectedIndexPath];
+    if ([document checkFileExist:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]]) {
+        NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
         [SVProgressHUD dismiss];
         ReaderPDF *reader = [ReaderPDF instance];
         [reader ShowReaderDoccumentWithName:documentFile inVC:self];
     }else{
         [SVProgressHUD showProgress:0.0 status:@"Downloading..."];
         BookService *serviceBook = [BookService instance];
-        [serviceBook downloadFileWith:blobCurrent statusBlock:^(QBRequestStatus *status) {
+        [serviceBook downloadFileWith:[object_custom.fields[@"bookID"]integerValue] statusBlock:^(QBRequestStatus *status) {
             [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
-            if (status.percentOfCompletion==1) {
-                [SVProgressHUD dismiss];
-            }
         } success:^(BOOL isSuccess) {
             [SVProgressHUD dismiss];
             if (isSuccess) {
-                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
                 ReaderPDF *reader = [ReaderPDF instance];
                 [reader ShowReaderDoccumentWithName:documentFile inVC:self];
             }else{

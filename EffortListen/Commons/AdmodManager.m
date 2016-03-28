@@ -40,10 +40,6 @@ const NSInteger showAdBottom = 1;
     return self;
 }
 
-- (void)showAdmodInTop {
-    
-}
-
 - (void)showAdmodInTopThisViewController:(UIViewController *)controller {
     [self showAdmod:showAdTop inViewController:controller];
 }
@@ -63,7 +59,11 @@ const NSInteger showAdBottom = 1;
     request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
     [bannerView_ loadRequest:request];
     [viewBannerAdMod addSubview:bannerView_];
-    [parent.view addSubview:viewBannerAdMod];
+    if (type==showAdTop) {
+        [parent.view insertSubview:viewBannerAdMod atIndex:0];
+    }else {
+        [parent.view addSubview:viewBannerAdMod];
+    }
     
     [viewBannerAdMod autoAlignAxisToSuperviewAxis:ALAxisVertical];
     

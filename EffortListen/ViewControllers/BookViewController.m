@@ -88,8 +88,8 @@
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QBCBlob *blob = [self.bookList objectAtIndex:indexPath.row];
-    if (![blob.contentType isEqualToString:@"application/pdf"]) {
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:indexPath.row];
+    if ([object_custom.fields[@"type"] integerValue]==1) {
         [self performSegueWithIdentifier:@"playSound" sender:indexPath];
     }
 }
@@ -124,21 +124,20 @@
         NSIndexPath *indexPath = (NSIndexPath*)sender;
         bookVC.currentIndexBook = indexPath.row;
         bookVC.bookList = self.bookList;
-        bookVC.customObject = self.customObject;
     }
 }
 
 - (void)showBook:(id)sender {
     TQNDocument *document = [TQNDocument instance];
-    QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
-    if ([document checkFileExist:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]]) {
-        NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:[sender tag]];
+    if ([document checkFileExist:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]]) {
+        NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
         [SVProgressHUD dismiss];
         [self readerPDFWithDocumentFile:documentFile];
     }else{
         [SVProgressHUD showProgress:0.0 status:@"Downloading..."];
         BookService *serviceBook = [BookService instance];
-        [serviceBook downloadFileWith:blobCurrent statusBlock:^(QBRequestStatus *status) {
+        [serviceBook downloadFileWith:[object_custom.fields[@"bookID"]integerValue] statusBlock:^(QBRequestStatus *status) {
             [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
             if (status.percentOfCompletion==1) {
                 [SVProgressHUD dismiss];
@@ -146,7 +145,7 @@
         } success:^(BOOL isSuccess) {
             [SVProgressHUD dismiss];
             if (isSuccess) {
-                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
                 [self readerPDFWithDocumentFile:documentFile];
             }else{
                 [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Load file error" duration:2.0 showIn:self blockDismissView:nil];
@@ -169,7 +168,7 @@
             if (blob) {
                 PlaySound *play = [PlaySound instance];
                 [play showVideoWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
-                [play playWithURLString:blob.privateUrl];
+                [play playWithURLString:blob.privateUrl];                
             }
         }];
     };
