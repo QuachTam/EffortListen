@@ -34,6 +34,11 @@
 
 #import <MessageUI/MessageUI.h>
 
+@class GADBannerView;
+@import GoogleMobileAds;
+
+static NSString *ClientAppID = @"ca-app-pub-9259023205127043/7494555614";
+
 @interface ReaderViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate, UIDocumentInteractionControllerDelegate,
 									ReaderMainToolbarDelegate, ReaderMainPagebarDelegate, ReaderContentViewDelegate, ThumbsViewControllerDelegate>
 @end
@@ -305,6 +310,23 @@
 			[object updateDocumentProperties]; document = object; // Retain the supplied ReaderDocument object for our use
 
 			[ReaderThumbCache touchThumbCacheWithGUID:object.guid]; // Touch the document thumb cache directory
+            
+            UIView *viewBannerAdMod = [[UIView alloc] initForAutoLayout];
+            GADBannerView *bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+            bannerView_.adUnitID = ClientAppID;
+            bannerView_.rootViewController = self;
+            bannerView_.autoloadEnabled = YES;
+            GADRequest *request = [GADRequest request];
+            request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
+            [bannerView_ loadRequest:request];
+            [viewBannerAdMod addSubview:bannerView_];
+            [self.view insertSubview:viewBannerAdMod atIndex:0];
+            
+            [viewBannerAdMod autoAlignAxisToSuperviewAxis:ALAxisVertical];
+            [viewBannerAdMod autoPinEdgeToSuperviewEdge:ALEdgeTop];
+            [viewBannerAdMod autoSetDimension:ALDimensionHeight toSize:kGADAdSizeBanner.size.height];
+            [viewBannerAdMod autoSetDimension:ALDimensionWidth toSize:self.view.frame.size.width];
+            
 		}
 		else // Invalid ReaderDocument object
 		{

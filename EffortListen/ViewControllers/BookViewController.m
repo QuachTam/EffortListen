@@ -37,6 +37,8 @@
     [service getListBlobWithID:self.customObject.fields[@"contentID"]];
     self.title = @"Files";
     [self backButton];
+    AdmodManager *adManager = [AdmodManager sharedInstance];
+    [adManager showAdmodInViewController];
 }
 
 - (void)backButton {
@@ -156,10 +158,14 @@
 }
 
 - (void)playSound:(id)sender {
-    QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
-    PlaySound *play = [PlaySound instance];
-    [play showVideoWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
-    [play playWithURLString:blobCurrent.privateUrl];
+    AdmodManager *adManager = [AdmodManager sharedInstance];
+    adManager.interstitialDidDismissScreen = ^{
+        QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
+        PlaySound *play = [PlaySound instance];
+        [play showVideoWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
+        [play playWithURLString:blobCurrent.privateUrl];
+    };
+    [adManager createAndLoadInterstitial];
 }
 
 - (void)didReceiveMemoryWarning {

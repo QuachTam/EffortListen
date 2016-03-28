@@ -28,6 +28,7 @@
 		FB6763F21CA24EC700344306 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763F11CA24EC700344306 /* BookViewController.m */; };
 		FB6763F91CA2868800344306 /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763F81CA2868800344306 /* BookService.m */; };
 		FB6763FC1CA2A61100344306 /* PlaySoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */; };
+		FB93904E1CA90D4000C76B04 /* AdmodManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB93904D1CA90D4000C76B04 /* AdmodManager.m */; };
 		FB9E9C211CA3C7870007ACDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E9C201CA3C7870007ACDA /* CoreGraphics.framework */; };
 		FB9E9C231CA3C7920007ACDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E9C221CA3C7920007ACDA /* QuartzCore.framework */; };
 		FB9E9C251CA3C79A0007ACDA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E9C241CA3C79A0007ACDA /* MessageUI.framework */; };
@@ -155,6 +156,8 @@
 		FB6763F81CA2868800344306 /* BookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookService.m; sourceTree = "<group>"; };
 		FB6763FA1CA2A61100344306 /* PlaySoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySoundViewController.h; sourceTree = "<group>"; };
 		FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySoundViewController.m; sourceTree = "<group>"; };
+		FB93904C1CA90D4000C76B04 /* AdmodManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmodManager.h; sourceTree = "<group>"; };
+		FB93904D1CA90D4000C76B04 /* AdmodManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdmodManager.m; sourceTree = "<group>"; };
 		FB9E9C201CA3C7870007ACDA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FB9E9C221CA3C7920007ACDA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FB9E9C241CA3C79A0007ACDA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -561,6 +564,8 @@
 				FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */,
 				FBFC2FA41CA4F5790043F354 /* TQNDocument.h */,
 				FBFC2FA51CA4F5790043F354 /* TQNDocument.m */,
+				FB93904C1CA90D4000C76B04 /* AdmodManager.h */,
+				FB93904D1CA90D4000C76B04 /* AdmodManager.m */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -761,6 +766,7 @@
 				FB9E9CA71CA3C7F30007ACDA /* ReaderConstants.m in Sources */,
 				FB3036D41CA1677F00186849 /* Common.m in Sources */,
 				A577180A1CA18C5D00102307 /* LoginViewController.m in Sources */,
+				FB93904E1CA90D4000C76B04 /* AdmodManager.m in Sources */,
 				FB9E9CB41CA3C7F30007ACDA /* ReaderThumbsView.m in Sources */,
 				FB9E9D221CA3E0E20007ACDA /* RWLabel.m in Sources */,
 				FB3036A51CA14AE300186849 /* EffortListen.xcdatamodeld in Sources */,

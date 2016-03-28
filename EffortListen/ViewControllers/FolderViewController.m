@@ -29,6 +29,8 @@
     self.title = @"Folders";
     [self rightButton];
     [self leftButton];
+    AdmodManager *adManager = [AdmodManager sharedInstance];
+    [adManager showAdmodInViewController];
 }
 
 - (void)leftButton {

@@ -6,4 +6,5 @@ target 'EffortListen' do
     pod 'NMPaginator'
     pod 'KRVideoPlayer'
     pod 'PureLayout'
+    pod 'Google-Mobile-Ads-SDK'
 end
