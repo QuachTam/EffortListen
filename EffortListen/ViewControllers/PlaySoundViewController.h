@@ -15,4 +15,6 @@
 - (IBAction)readBookAction:(id)sender;
 @property (nonatomic, strong) NSArray *bookList;
 @property (nonatomic, readwrite) NSInteger currentIndexBook;
+@property (nonatomic, strong) QBCOCustomObject *customObject;
+
 @end

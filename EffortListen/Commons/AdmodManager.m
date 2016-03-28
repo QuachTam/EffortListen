@@ -13,6 +13,8 @@ static NSString *ClientAppID = @"ca-app-pub-9259023205127043/7494555614";
 #import "AdmodManager.h"
 #import <PureLayout/PureLayout.h>
 
+const NSInteger showAdTop =0;
+const NSInteger showAdBottom = 1;
 
 @interface AdmodManager ()<GADInterstitialDelegate>
 /// The DFP interstitial ad.
@@ -43,43 +45,36 @@ static NSString *ClientAppID = @"ca-app-pub-9259023205127043/7494555614";
 }
 
 - (void)showAdmodInTopThisViewController:(UIViewController *)controller {
-    UIView *viewBannerAdMod = [[UIView alloc] initForAutoLayout];
-    GADBannerView *bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    bannerView_.adUnitID = ClientAppID;
-    bannerView_.rootViewController = controller;
-    bannerView_.autoloadEnabled = YES;
-    GADRequest *request = [GADRequest request];
-    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
-    [bannerView_ loadRequest:request];
-    [viewBannerAdMod addSubview:bannerView_];
-    [controller.view insertSubview:viewBannerAdMod atIndex:0];
-    
-    [viewBannerAdMod autoAlignAxisToSuperviewAxis:ALAxisVertical];
-    [viewBannerAdMod autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [viewBannerAdMod autoSetDimension:ALDimensionHeight toSize:kGADAdSizeBanner.size.height];
-    [viewBannerAdMod autoSetDimension:ALDimensionWidth toSize:controller.view.frame.size.width];
+    [self showAdmod:showAdTop inViewController:controller];
 }
 
-
-NSInteger typeTop = 0;
-
-- (void)showAdmodInViewController:(NSInteger)number{
+- (void)showAdmodInViewController{
     UIViewController *root = [self getCurrentViewController];
+    [self showAdmod:showAdBottom inViewController:root];
+}
+
+- (void)showAdmod:(NSInteger)type inViewController:(UIViewController *)parent{
     UIView *viewBannerAdMod = [[UIView alloc] initForAutoLayout];
     GADBannerView *bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     bannerView_.adUnitID = ClientAppID;
-    bannerView_.rootViewController = root;
+    bannerView_.rootViewController = parent;
     bannerView_.autoloadEnabled = YES;
     GADRequest *request = [GADRequest request];
     request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
     [bannerView_ loadRequest:request];
     [viewBannerAdMod addSubview:bannerView_];
-    [root.view addSubview:viewBannerAdMod];
+    [parent.view addSubview:viewBannerAdMod];
     
     [viewBannerAdMod autoAlignAxisToSuperviewAxis:ALAxisVertical];
-    [viewBannerAdMod autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    
     [viewBannerAdMod autoSetDimension:ALDimensionHeight toSize:kGADAdSizeBanner.size.height];
-    [viewBannerAdMod autoSetDimension:ALDimensionWidth toSize:root.view.frame.size.width];
+    [viewBannerAdMod autoSetDimension:ALDimensionWidth toSize:parent.view.frame.size.width];
+    if (type==showAdTop) {
+        [viewBannerAdMod autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    }else{
+        [viewBannerAdMod autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    }
+    
 }
 
 #pragma mark getCurrentViewController

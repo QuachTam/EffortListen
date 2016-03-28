@@ -27,14 +27,15 @@
     self.bookList = [NSArray new];
     [SVProgressHUD showWithStatus:@"Loading"];
     BookService *service = [BookService instance];
-    service.didCompleteFetchBlob = ^(NSArray *blobs){
+    [service getListItem:self.customObject.fields[@"itemID"] success:^(NSArray * _Nullable objects) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
         });
-        self.bookList = blobs;
+        self.bookList = objects;
         [self.tbView reloadData];
-    };
-    [service getListBlobWithID:self.customObject.fields[@"contentID"]];
+    } fail:^(QBResponse * _Nonnull response) {
+        [SVProgressHUD showErrorWithStatus:@"Server Error"];
+    }];
     self.title = @"Files";
     [self backButton];
     AdmodManager *adManager = [AdmodManager sharedInstance];
@@ -72,15 +73,16 @@
 
 - (void)configureformTableViewCell:(FolderTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView*)tableView{
     // some code for initializing cell content
-    QBCBlob *blob = [self.bookList objectAtIndex:indexPath.row];
-    cell.name.text = blob.name;
+    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:indexPath.row];
+    cell.name.text = object_custom.fields[@"name"];
     cell.buttonRun.tag = indexPath.row;
-    if ([blob.contentType isEqualToString:@"application/pdf"]) {
-        [cell.buttonRun setImage:[UIImage imageNamed:@"bookShow"] forState:UIControlStateNormal];
-        [cell.buttonRun addTarget:self action:@selector(showBook:) forControlEvents:UIControlEventTouchUpInside];
-    }else{
+    NSNumber *type = object_custom.fields[@"type"];
+    if ([type integerValue] == 1) {
         [cell.buttonRun setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         [cell.buttonRun addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
+    }else{
+        [cell.buttonRun setImage:[UIImage imageNamed:@"bookShow"] forState:UIControlStateNormal];
+        [cell.buttonRun addTarget:self action:@selector(showBook:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -122,6 +124,7 @@
         NSIndexPath *indexPath = (NSIndexPath*)sender;
         bookVC.currentIndexBook = indexPath.row;
         bookVC.bookList = self.bookList;
+        bookVC.customObject = self.customObject;
     }
 }
 
@@ -160,10 +163,15 @@
 - (void)playSound:(id)sender {
     AdmodManager *adManager = [AdmodManager sharedInstance];
     adManager.interstitialDidDismissScreen = ^{
-        QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
-        PlaySound *play = [PlaySound instance];
-        [play showVideoWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
-        [play playWithURLString:blobCurrent.privateUrl];
+        QBCOCustomObject *object_custom = [self.bookList objectAtIndex:[sender tag]];
+        BookService *service = [BookService instance];
+        [service requestBlobWithID:[object_custom.fields[@"contentID"] integerValue] success:^(QBCBlob *blob) {
+            if (blob) {
+                PlaySound *play = [PlaySound instance];
+                [play showVideoWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
+                [play playWithURLString:blob.privateUrl];
+            }
+        }];
     };
     [adManager createAndLoadInterstitial];
 }

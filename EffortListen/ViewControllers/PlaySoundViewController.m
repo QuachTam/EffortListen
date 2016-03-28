@@ -11,6 +11,8 @@
 #import "ReaderViewController.h"
 #import "PlaySound.h"
 #import "ReaderPDF.h"
+#import "TQNDocument.h"
+#import "BookService.h"
 
 @interface PlaySoundViewController ()<ReaderViewControllerDelegate>
 @property (nonatomic, readwrite) NSInteger selectedIndexPath;
@@ -131,8 +133,32 @@
 }
 
 - (IBAction)readBookAction:(id)sender {
-    ReaderPDF *reader = [ReaderPDF instance];
-    [reader ShowReaderDoccumentWithName:nil inVC:self];
+    TQNDocument *document = [TQNDocument instance];
+    QBCBlob *blobCurrent = [self.bookList objectAtIndex:[sender tag]];
+    if ([document checkFileExist:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]]) {
+        NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+        [SVProgressHUD dismiss];
+        ReaderPDF *reader = [ReaderPDF instance];
+        [reader ShowReaderDoccumentWithName:documentFile inVC:self];
+    }else{
+        [SVProgressHUD showProgress:0.0 status:@"Downloading..."];
+        BookService *serviceBook = [BookService instance];
+        [serviceBook downloadFileWith:blobCurrent statusBlock:^(QBRequestStatus *status) {
+            [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
+            if (status.percentOfCompletion==1) {
+                [SVProgressHUD dismiss];
+            }
+        } success:^(BOOL isSuccess) {
+            [SVProgressHUD dismiss];
+            if (isSuccess) {
+                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)blobCurrent.ID]];
+                ReaderPDF *reader = [ReaderPDF instance];
+                [reader ShowReaderDoccumentWithName:documentFile inVC:self];
+            }else{
+                [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Load file error" duration:2.0 showIn:self blockDismissView:nil];
+            }
+        }];
+    }
 }
 
 @end

@@ -114,7 +114,7 @@
     // some code for initializing cell content
     QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
     cell.name.text = object_custom.fields[@"name"];
-    cell.numberBook.text = [NSString stringWithFormat:@"%d", [object_custom.fields[@"contentID"] count]];
+    cell.numberBook.text = [NSString stringWithFormat:@"%ld", [object_custom.fields[@"itemID"] count]];
 }
 
 #pragma mark - Table view delegate

@@ -11,7 +11,7 @@
 @interface AdmodManager : NSObject
 @property (nonatomic, copy, readwrite) void(^interstitialDidDismissScreen)();
 + (AdmodManager*)sharedInstance;
-- (void)showAdmodInViewController;
-- (void)showInterstitial;
 - (void)createAndLoadInterstitial;
+- (void)showAdmodInViewController;
+- (void)showAdmodInTopThisViewController:(UIViewController *)controller;
 @end
