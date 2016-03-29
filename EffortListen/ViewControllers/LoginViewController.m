@@ -30,6 +30,21 @@
         } else {
             [SVProgressHUD showErrorWithStatus:@"Error"];
         }
+        
+        QBUpdateUserParameters *updateParameters = [QBUpdateUserParameters new];
+        updateParameters.website = @"www.mysite.com";
+        updateParameters.phone = @"213215432132";
+        NSDictionary *contentDictionary = @{@"linkAppstore":@"https://developers.facebook.com/quickstarts/1040136779400633/?platform=ios", @"description":@"asdfasdfasdfasdfasdf"};
+        NSData *data = [NSJSONSerialization dataWithJSONObject:contentDictionary options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *jsonStr = [[NSString alloc] initWithData:data
+                                                  encoding:NSUTF8StringEncoding];
+        updateParameters.customData = jsonStr;
+        
+        [QBRequest updateCurrentUser:updateParameters successBlock:^(QBResponse *response, QBUUser *user) {
+            NSLog(@"sdfsdf");
+        } errorBlock:^(QBResponse *response) {
+            NSLog(@"ssssss");
+        }];
     }];
 }
 

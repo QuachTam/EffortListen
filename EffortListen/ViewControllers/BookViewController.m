@@ -51,6 +51,10 @@
     [self.navigationItem setLeftBarButtonItem:backBarButton];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)backView {
     [self.navigationController popViewControllerAnimated:YES];
 }

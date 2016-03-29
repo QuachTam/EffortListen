@@ -27,6 +27,10 @@
     [self backButton];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)backButton {
     UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
     [btnBack setFrame:CGRectMake(0, 0, 25, 25)];

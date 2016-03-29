@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
+#import "BaseViewController.h"
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @end

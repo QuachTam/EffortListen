@@ -12,9 +12,11 @@
 #import "Storage.h"
 #import "FolderTableViewCell.h"
 #import "BookViewController.h"
+#import "FaceBookServicesManager.h"
 
 @interface FolderViewController ()<NMPaginatorDelegate>
 @property (nonatomic, strong) ObjectsPaginator *paginator;
+@property (nonatomic, readwrite) BOOL isFetchData;
 @end
 
 @implementation FolderViewController
@@ -29,16 +31,29 @@
     }
     
     // Do any additional setup after loading the view.
-    [SVProgressHUD showWithStatus:@"Loading"];
-    [[Storage instance].folderList removeAllObjects];
-    
-    self.paginator = [[ObjectsPaginator alloc] initWithPageSize:10 delegate:self];
-    [self.paginator fetchFirstPage];
     self.title = @"Folders";
     [self rightButton];
     [self footerView];
+    
     AdmodManager *adManager = [AdmodManager sharedInstance];
     [adManager showAdmodInViewController];
+    
+    self.isFetchData = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.isFetchData) {
+        self.isFetchData = NO;
+        [SVProgressHUD showWithStatus:@"Loading"];
+        [self performSelector:@selector(fetchData) withObject:nil afterDelay:0.1];
+    }
+}
+
+- (void)fetchData {
+    [[Storage instance].folderList removeAllObjects];
+    self.paginator = [[ObjectsPaginator alloc] initWithPageSize:10 delegate:self];
+    [self.paginator fetchFirstPage];
 }
 
 - (void)rightButton {
@@ -47,11 +62,38 @@
     [btnRight setImage:[UIImage imageNamed:@"brightLight"] forState:UIControlStateNormal];
     [btnRight addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnRight];
-    [self.navigationItem setRightBarButtonItem:rightBarButton];
+    
+    
+    UIButton *btnRightFace=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnRightFace setFrame:CGRectMake(0, 0, 25, 25)];
+    [btnRightFace setImage:[UIImage imageNamed:@"faceBook"] forState:UIControlStateNormal];
+    [btnRightFace addTarget:self action:@selector(likeFaceBook) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightFaceBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnRightFace];
+    
+    [self.navigationItem setRightBarButtonItems:@[rightBarButton, rightFaceBarButton]];
 }
 
 - (void)rightAction {
     [self performSegueWithIdentifier:@"suggest" sender:nil];
+}
+
+- (void)likeFaceBook {
+    NSData *data = [QMServicesManager.instance.currentUser.customData dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:kNilOptions
+                                                                   error:nil];
+    if (jsonResponse) {
+        FBSDKLoginManager *loginmanager= [[FBSDKLoginManager alloc]init];
+        [loginmanager logOut];
+        FaceBookServicesManager *faceManager = [FaceBookServicesManager sharedInstance];
+        [faceManager loginFaceBookWithPermission:@[@"public_profile", @"email", @"user_friends"] success:^(FaceBookInformation *faceInfo) {
+            [faceManager shareLink:[jsonResponse valueForKey:@"linkAppstore"] inViewController:self];
+        } fail:^(NSError *error) {
+            NSLog(@"fail");
+        } cancel:^{
+            NSLog(@"cancel");
+        }];
+    }
 }
 
 - (void)paginator:(id)paginator didReceiveResults:(NSArray *)results {

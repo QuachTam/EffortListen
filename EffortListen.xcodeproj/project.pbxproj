@@ -11,6 +11,20 @@
 		A57718081CA18C5D00102307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57718031CA18C5D00102307 /* AppDelegate.m */; };
 		A57718091CA18C5D00102307 /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57718051CA18C5D00102307 /* FolderViewController.m */; };
 		A577180A1CA18C5D00102307 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57718071CA18C5D00102307 /* LoginViewController.m */; };
+		FB08B51B1CAA7C25005466D9 /* folder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B5191CAA7C25005466D9 /* folder@3x.png */; };
+		FB08B51C1CAA7C25005466D9 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B51A1CAA7C25005466D9 /* folder@2x.png */; };
+		FB08B51F1CAA7C34005466D9 /* about@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B51D1CAA7C34005466D9 /* about@3x.png */; };
+		FB08B5201CAA7C34005466D9 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B51E1CAA7C34005466D9 /* about@2x.png */; };
+		FB08B5231CAA7EF2005466D9 /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB08B5221CAA7EF2005466D9 /* LeftTableViewController.m */; };
+		FB08B5261CAA818A005466D9 /* faceBook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B5241CAA818A005466D9 /* faceBook@3x.png */; };
+		FB08B5271CAA818A005466D9 /* faceBook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B5251CAA818A005466D9 /* faceBook@2x.png */; };
+		FB08B52A1CAA829D005466D9 /* FaceBookServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB08B5291CAA829D005466D9 /* FaceBookServicesManager.m */; };
+		FB08B5321CAA854B005466D9 /* FacebookSDKStrings.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = FB08B52C1CAA854B005466D9 /* FacebookSDKStrings.bundle */; };
+		FB08B5331CAA854B005466D9 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB08B52D1CAA854B005466D9 /* FBAudienceNetwork.framework */; };
+		FB08B5341CAA854B005466D9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB08B52E1CAA854B005466D9 /* FBSDKCoreKit.framework */; };
+		FB08B5351CAA854B005466D9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB08B52F1CAA854B005466D9 /* FBSDKLoginKit.framework */; };
+		FB08B5361CAA854B005466D9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB08B5301CAA854B005466D9 /* FBSDKShareKit.framework */; };
+		FB08B5381CAA88AD005466D9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB08B5371CAA88AD005466D9 /* AdSupport.framework */; };
 		FB3036991CA14AE300186849 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036981CA14AE300186849 /* main.m */; };
 		FB3036A21CA14AE300186849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3036A01CA14AE300186849 /* Main.storyboard */; };
 		FB3036A51CA14AE300186849 /* EffortListen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB3036A31CA14AE300186849 /* EffortListen.xcdatamodeld */; };
@@ -29,7 +43,6 @@
 		FB4410DF1CAA36AE00176306 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */; };
 		FB4410E21CAA392D00176306 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4410E01CAA392D00176306 /* menu@3x.png */; };
 		FB4410E31CAA392D00176306 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4410E11CAA392D00176306 /* menu@2x.png */; };
-		FB4410E71CAA3A0900176306 /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410E61CAA3A0900176306 /* LeftTableViewController.m */; };
 		FB4410EA1CAA3A4F00176306 /* LeftCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410E91CAA3A4F00176306 /* LeftCustomCell.m */; };
 		FB4410ED1CAA3F5A00176306 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410EC1CAA3F5A00176306 /* BaseViewController.m */; };
 		FB4410F01CAA423500176306 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410EF1CAA423500176306 /* AboutViewController.m */; };
@@ -131,6 +144,22 @@
 		A57718071CA18C5D00102307 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortListen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EffortListen/Pods-EffortListen.debug.xcconfig"; sourceTree = "<group>"; };
 		F4630938C6C7D6A5FB65A36B /* libPods-EffortListen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EffortListen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB08B5191CAA7C25005466D9 /* folder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@3x.png"; sourceTree = "<group>"; };
+		FB08B51A1CAA7C25005466D9 /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
+		FB08B51D1CAA7C34005466D9 /* about@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@3x.png"; sourceTree = "<group>"; };
+		FB08B51E1CAA7C34005466D9 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
+		FB08B5211CAA7EF2005466D9 /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
+		FB08B5221CAA7EF2005466D9 /* LeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewController.m; sourceTree = "<group>"; };
+		FB08B5241CAA818A005466D9 /* faceBook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "faceBook@3x.png"; sourceTree = "<group>"; };
+		FB08B5251CAA818A005466D9 /* faceBook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "faceBook@2x.png"; sourceTree = "<group>"; };
+		FB08B5281CAA829D005466D9 /* FaceBookServicesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceBookServicesManager.h; sourceTree = "<group>"; };
+		FB08B5291CAA829D005466D9 /* FaceBookServicesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceBookServicesManager.m; sourceTree = "<group>"; };
+		FB08B52C1CAA854B005466D9 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		FB08B52D1CAA854B005466D9 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		FB08B52E1CAA854B005466D9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		FB08B52F1CAA854B005466D9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		FB08B5301CAA854B005466D9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		FB08B5371CAA88AD005466D9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FB3036941CA14AE300186849 /* EffortListen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffortListen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3036981CA14AE300186849 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB3036A11CA14AE300186849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,8 +192,6 @@
 		FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		FB4410E01CAA392D00176306 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
 		FB4410E11CAA392D00176306 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
-		FB4410E51CAA3A0900176306 /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
-		FB4410E61CAA3A0900176306 /* LeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewController.m; sourceTree = "<group>"; };
 		FB4410E81CAA3A4F00176306 /* LeftCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftCustomCell.h; sourceTree = "<group>"; };
 		FB4410E91CAA3A4F00176306 /* LeftCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftCustomCell.m; sourceTree = "<group>"; };
 		FB4410EB1CAA3F5A00176306 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -298,6 +325,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB08B5381CAA88AD005466D9 /* AdSupport.framework in Frameworks */,
+				FB08B5321CAA854B005466D9 /* FacebookSDKStrings.bundle in Frameworks */,
+				FB08B5331CAA854B005466D9 /* FBAudienceNetwork.framework in Frameworks */,
+				FB08B5341CAA854B005466D9 /* FBSDKCoreKit.framework in Frameworks */,
+				FB08B5351CAA854B005466D9 /* FBSDKLoginKit.framework in Frameworks */,
+				FB08B5361CAA854B005466D9 /* FBSDKShareKit.framework in Frameworks */,
 				FB9E9C271CA3C7A10007ACDA /* ImageIO.framework in Frameworks */,
 				FB9E9C251CA3C79A0007ACDA /* MessageUI.framework in Frameworks */,
 				FB9E9C231CA3C7920007ACDA /* QuartzCore.framework in Frameworks */,
@@ -321,6 +354,12 @@
 		7D21BDC39208A46497D56363 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB08B5371CAA88AD005466D9 /* AdSupport.framework */,
+				FB08B52C1CAA854B005466D9 /* FacebookSDKStrings.bundle */,
+				FB08B52D1CAA854B005466D9 /* FBAudienceNetwork.framework */,
+				FB08B52E1CAA854B005466D9 /* FBSDKCoreKit.framework */,
+				FB08B52F1CAA854B005466D9 /* FBSDKLoginKit.framework */,
+				FB08B5301CAA854B005466D9 /* FBSDKShareKit.framework */,
 				FB9E9C261CA3C7A10007ACDA /* ImageIO.framework */,
 				FB9E9C241CA3C79A0007ACDA /* MessageUI.framework */,
 				FB9E9C221CA3C7920007ACDA /* QuartzCore.framework */,
@@ -333,8 +372,6 @@
 		A57718011CA18C5D00102307 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB4410E41CAA3A0900176306 /* LeftViewController */,
-				FB4410D91CAA36AE00176306 /* SWRevealViewController */,
 				A57718021CA18C5D00102307 /* AppDelegate.h */,
 				A57718031CA18C5D00102307 /* AppDelegate.m */,
 				A57718061CA18C5D00102307 /* LoginViewController.h */,
@@ -349,8 +386,11 @@
 				FB9E9D171CA3DAE10007ACDA /* SuggestViewController.m */,
 				FB4410EE1CAA423500176306 /* AboutViewController.h */,
 				FB4410EF1CAA423500176306 /* AboutViewController.m */,
+				FB08B5211CAA7EF2005466D9 /* LeftTableViewController.h */,
+				FB08B5221CAA7EF2005466D9 /* LeftTableViewController.m */,
 				FB4410EB1CAA3F5A00176306 /* BaseViewController.h */,
 				FB4410EC1CAA3F5A00176306 /* BaseViewController.m */,
+				FB4410D91CAA36AE00176306 /* SWRevealViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -445,15 +485,6 @@
 				FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
-			sourceTree = "<group>";
-		};
-		FB4410E41CAA3A0900176306 /* LeftViewController */ = {
-			isa = PBXGroup;
-			children = (
-				FB4410E51CAA3A0900176306 /* LeftTableViewController.h */,
-				FB4410E61CAA3A0900176306 /* LeftTableViewController.m */,
-			);
-			path = LeftViewController;
 			sourceTree = "<group>";
 		};
 		FB6763F61CA284A600344306 /* Services */ = {
@@ -580,6 +611,12 @@
 		FB9E9D091CA3D3BD0007ACDA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FB08B5241CAA818A005466D9 /* faceBook@3x.png */,
+				FB08B5251CAA818A005466D9 /* faceBook@2x.png */,
+				FB08B51D1CAA7C34005466D9 /* about@3x.png */,
+				FB08B51E1CAA7C34005466D9 /* about@2x.png */,
+				FB08B5191CAA7C25005466D9 /* folder@3x.png */,
+				FB08B51A1CAA7C25005466D9 /* folder@2x.png */,
 				FB4410E01CAA392D00176306 /* menu@3x.png */,
 				FB4410E11CAA392D00176306 /* menu@2x.png */,
 				FBFC2FAB1CA536820043F354 /* setting@3x.png */,
@@ -613,6 +650,8 @@
 				FBFC2FA51CA4F5790043F354 /* TQNDocument.m */,
 				FB93904C1CA90D4000C76B04 /* AdmodManager.h */,
 				FB93904D1CA90D4000C76B04 /* AdmodManager.m */,
+				FB08B5281CAA829D005466D9 /* FaceBookServicesManager.h */,
+				FB08B5291CAA829D005466D9 /* FaceBookServicesManager.m */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -693,6 +732,8 @@
 				FB3036AA1CA14AE300186849 /* LaunchScreen.storyboard in Resources */,
 				FB9E9C9B1CA3C7F30007ACDA /* Reader-Mark-Y@2x.png in Resources */,
 				FB9E9C971CA3C7F30007ACDA /* Reader-Mark-N.png in Resources */,
+				FB08B51C1CAA7C25005466D9 /* folder@2x.png in Resources */,
+				FB08B5271CAA818A005466D9 /* faceBook@2x.png in Resources */,
 				FB9E9D0C1CA3D3CF0007ACDA /* cancel@3x.png in Resources */,
 				FBFC2FAE1CA536820043F354 /* setting@2x.png in Resources */,
 				FB4410E31CAA392D00176306 /* menu@2x.png in Resources */,
@@ -722,6 +763,7 @@
 				FB9E9C7F1CA3C7F30007ACDA /* AppIcon-057.png in Resources */,
 				FBFC2FAA1CA52AD50043F354 /* back@3x.png in Resources */,
 				FB9E9C8B1CA3C7F30007ACDA /* Reader-Button-H.png in Resources */,
+				FB08B5261CAA818A005466D9 /* faceBook@3x.png in Resources */,
 				FB9E9C9C1CA3C7F30007ACDA /* Reader-Mark-Y@3x.png in Resources */,
 				FB9E9C831CA3C7F30007ACDA /* AppIcon-120.png in Resources */,
 				FB3036A71CA14AE300186849 /* Assets.xcassets in Resources */,
@@ -732,11 +774,14 @@
 				FB9E9C9E1CA3C7F30007ACDA /* Reader-Print@2x.png in Resources */,
 				FB9E9C981CA3C7F30007ACDA /* Reader-Mark-N@2x.png in Resources */,
 				FB9E9C8C1CA3C7F30007ACDA /* Reader-Button-H@2x.png in Resources */,
+				FB08B51B1CAA7C25005466D9 /* folder@3x.png in Resources */,
+				FB08B51F1CAA7C34005466D9 /* about@3x.png in Resources */,
 				FB9E9C881CA3C7F30007ACDA /* Default-568h@2x.png in Resources */,
 				FB9E9C851CA3C7F30007ACDA /* AppIcon-152.png in Resources */,
 				FB9E9C961CA3C7F30007ACDA /* Reader-Export@3x.png in Resources */,
 				FB9E9C8D1CA3C7F30007ACDA /* Reader-Button-H@3x.png in Resources */,
 				FB4410E21CAA392D00176306 /* menu@3x.png in Resources */,
+				FB08B5201CAA7C34005466D9 /* about@2x.png in Resources */,
 				FB9E9CA41CA3C7F30007ACDA /* Reader-App.storyboard in Resources */,
 				FB3036A21CA14AE300186849 /* Main.storyboard in Resources */,
 				FB9E9D151CA3D8E70007ACDA /* brightLight@2x.png in Resources */,
@@ -805,6 +850,7 @@
 				FB6763F21CA24EC700344306 /* BookViewController.m in Sources */,
 				FB9E9CB11CA3C7F30007ACDA /* ReaderThumbQueue.m in Sources */,
 				FB3036BF1CA15C6700186849 /* ModelItem.m in Sources */,
+				FB08B52A1CAA829D005466D9 /* FaceBookServicesManager.m in Sources */,
 				FB3036C11CA15C6700186849 /* Storage.m in Sources */,
 				FB9E9CAA1CA3C7F30007ACDA /* ReaderContentView.m in Sources */,
 				FB4410ED1CAA3F5A00176306 /* BaseViewController.m in Sources */,
@@ -835,12 +881,12 @@
 				FB3036D11CA1673800186849 /* CustomHeader.m in Sources */,
 				FB3036C51CA15E7300186849 /* FolderTableViewCell.m in Sources */,
 				FB4410EA1CAA3A4F00176306 /* LeftCustomCell.m in Sources */,
-				FB4410E71CAA3A0900176306 /* LeftTableViewController.m in Sources */,
 				FB3036CE1CA1673800186849 /* CustomCellBackground.m in Sources */,
 				FB9E9D1B1CA3DEBD0007ACDA /* SuggestService.m in Sources */,
 				FB9E9CA91CA3C7F30007ACDA /* ReaderContentTile.m in Sources */,
 				FB9E9D181CA3DAE10007ACDA /* SuggestViewController.m in Sources */,
 				A57718091CA18C5D00102307 /* FolderViewController.m in Sources */,
+				FB08B5231CAA7EF2005466D9 /* LeftTableViewController.m in Sources */,
 				FB3036991CA14AE300186849 /* main.m in Sources */,
 				FB9E9CB01CA3C7F30007ACDA /* ReaderThumbFetch.m in Sources */,
 				FB4410DE1CAA36AE00176306 /* CustomAnimationController.m in Sources */,
@@ -973,15 +1019,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EffortListen/EffortListen-Prefix.pch";
 				INFOPLIST_FILE = EffortListen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qsoft.EffortListen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hqsoft.effortlisten;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -991,15 +1046,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69FA443079B7DFA8FA373DD9 /* Pods-EffortListen.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EffortListen/EffortListen-Prefix.pch";
 				INFOPLIST_FILE = EffortListen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qsoft.EffortListen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hqsoft.effortlisten;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FaceBookServicesManager.h"
 
 const NSUInteger kApplicationID = 37770;
 NSString *const kAuthKey        = @"yk27Lrh3MGYkXWG";
@@ -23,6 +24,8 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // Set QuickBlox credentials (You must create application in admin.quickblox.com)
+    [FaceBookServicesManager application:application didFinishLaunchingWithOptions:launchOptions];
+    
     [QBSettings setApplicationID:kApplicationID];
     [QBSettings setAuthKey:kAuthKey];
     [QBSettings setAuthSecret:kAuthSecret];
@@ -40,6 +43,20 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
       [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],NSForegroundColorAttributeName,[UIFont fontWithName:@"Arial-Bold" size:20],NSFontAttributeName,nil]];
     return YES;
 }
+
+#pragma mark -
+#pragma mark - SCFacebook Handle
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FaceBookServicesManager application:application
+                                        openURL:url
+                              sourceApplication:sourceApplication
+                                     annotation:annotation];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
