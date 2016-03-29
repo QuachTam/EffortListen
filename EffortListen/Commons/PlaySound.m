@@ -28,11 +28,13 @@
 
 - (void)showVideoWithFrame:(CGRect)frame{
     __weak typeof(self)weakSelf = self;
-    self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
-    [self.videoController setDimissCompleteBlock:^{
-        weakSelf.videoController = nil;
-    }];
-    [self.videoController showInWindow];
+    if (!self.videoController) {
+        self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
+        [self.videoController setDimissCompleteBlock:^{
+            weakSelf.videoController = nil;
+        }];
+        [self.videoController showInWindow];
+    }
 }
 
 - (void)playWithURLString:(NSString *)urlString {

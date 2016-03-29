@@ -28,19 +28,6 @@
     
     self.selectedIndexPath = self.currentIndexBook;
     [self setUpselectedCellIndexPath];
-
-    QBCOCustomObject *object_custom = [self.bookList objectAtIndex:self.currentIndexBook];
-    [SVProgressHUD showWithStatus:@"Loading"];
-    [self getBlobWithID:[object_custom.fields[@"contentID"] integerValue] success:^(QBCBlob *blob) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-        });
-        PlaySound *play = [PlaySound instance];
-        [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
-        [play playWithURLString:blob.privateUrl];
-    } fail:^{
-        [SVProgressHUD showErrorWithStatus:@"Server error"];
-    }];
 }
 
 - (void)getBlobWithID:(NSInteger)ID success:(void(^)(QBCBlob *blob))success fail:(void(^)(void))fail{
