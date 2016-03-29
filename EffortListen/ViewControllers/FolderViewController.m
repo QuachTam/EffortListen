@@ -39,6 +39,17 @@
     [adManager showAdmodInViewController];
     
     self.isFetchData = YES;
+    [self footerView];
+}
+
+- (void)footerView {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 67)];
+    self.tbView.tableFooterView = header;
+    
+    //update the header's frame and set it again
+    CGRect newFrame = self.tbView.tableFooterView.frame;
+    newFrame.size.height = newFrame.size.height;
+    self.tbView.tableFooterView.frame = newFrame;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -128,16 +139,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (void)footerView {
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    self.tbView.tableFooterView = header;
-    
-    //update the header's frame and set it again
-    CGRect newFrame = self.tbView.tableFooterView.frame;
-    newFrame.size.height = newFrame.size.height;
-    self.tbView.tableFooterView.frame = newFrame;
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

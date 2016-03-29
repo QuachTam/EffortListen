@@ -30,6 +30,17 @@
     [self setUpselectedCellIndexPath];
     AdmodManager *adManager = [AdmodManager sharedInstance];
     [adManager showAdmodInViewController];
+    [self footerView];
+}
+
+- (void)footerView {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 67)];
+    self.tbView.tableFooterView = header;
+    
+    //update the header's frame and set it again
+    CGRect newFrame = self.tbView.tableFooterView.frame;
+    newFrame.size.height = newFrame.size.height;
+    self.tbView.tableFooterView.frame = newFrame;
 }
 
 - (void)getBlobWithID:(NSInteger)ID success:(void(^)(QBCBlob *blob))success fail:(void(^)(void))fail{
@@ -96,8 +107,16 @@
             [SVProgressHUD dismiss];
         });
         PlaySound *play = [PlaySound instance];
-        [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
-        [play playWithURLString:blob.privateUrl];
+        play.dimissCompleteBlock =^{
+            [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
+            [play playWithURLString:blob.privateUrl];
+        };
+        if (play.isAvailable) {
+            [play dismiss];
+        }else{
+            [play showVideoWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 100)];
+            [play playWithURLString:blob.privateUrl];
+        }
     } fail:^{
         [SVProgressHUD showErrorWithStatus:@"Server error"];
     }];
@@ -147,8 +166,10 @@
 - (IBAction)cancelAction:(id)sender {
     PlaySound *play = [PlaySound instance];
     [play stop];
+    play.dimissCompleteBlock = ^{
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    };
     [play dismiss];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)readBookAction:(id)sender {

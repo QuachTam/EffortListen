@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PlaySound : NSObject
+@property (nonatomic, copy, readwrite) void(^dimissCompleteBlock)();
 - (void)showVideoWithFrame:(CGRect)frame;
 + (instancetype)instance;
 - (void)playWithURLString:(NSString *)urlString;
@@ -16,4 +17,5 @@
 - (void)play;
 - (void)pause;
 - (void)dismiss;
+- (BOOL)isAvailable;
 @end

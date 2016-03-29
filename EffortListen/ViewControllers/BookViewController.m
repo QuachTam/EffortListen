@@ -15,6 +15,9 @@
 #import "PlaySound.h"
 #import "TQNDocument.h"
 
+NSInteger TYPE_DATA_PM3 = 0;
+NSInteger TYPE_DATA_PDF = 1;
+
 @interface BookViewController ()
 @property (nonatomic, strong) NSArray *bookList;
 @end
@@ -40,8 +43,18 @@
     [self backButton];
     AdmodManager *adManager = [AdmodManager sharedInstance];
     [adManager showAdmodInViewController];
+    [self footerView];
 }
 
+- (void)footerView {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 67)];
+    self.tbView.tableFooterView = header;
+    
+    //update the header's frame and set it again
+    CGRect newFrame = self.tbView.tableFooterView.frame;
+    newFrame.size.height = newFrame.size.height;
+    self.tbView.tableFooterView.frame = newFrame;
+}
 - (void)backButton {
     UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
     [btnBack setFrame:CGRectMake(0, 0, 25, 25)];
@@ -81,7 +94,7 @@
     cell.name.text = object_custom.fields[@"name"];
     cell.buttonRun.tag = indexPath.row;
     NSNumber *type = object_custom.fields[@"type"];
-    if ([type integerValue] == 1) {
+    if ([type integerValue] != TYPE_DATA_PDF) {
         [cell.buttonRun setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         [cell.buttonRun addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
     }else{
@@ -93,7 +106,7 @@
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QBCOCustomObject *object_custom = [self.bookList objectAtIndex:indexPath.row];
-    if ([object_custom.fields[@"type"] integerValue]==1) {
+    if ([object_custom.fields[@"type"] integerValue]!=TYPE_DATA_PDF) {
         [self performSegueWithIdentifier:@"playSound" sender:indexPath];
     }
 }

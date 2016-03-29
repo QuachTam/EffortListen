@@ -12,5 +12,6 @@
 
 @interface AboutViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
+- (IBAction)sendEmailAction:(id)sender;
 
 @end

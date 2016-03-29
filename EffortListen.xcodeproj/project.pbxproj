@@ -325,6 +325,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9E9C251CA3C79A0007ACDA /* MessageUI.framework in Frameworks */,
 				FB08B5381CAA88AD005466D9 /* AdSupport.framework in Frameworks */,
 				FB08B5321CAA854B005466D9 /* FacebookSDKStrings.bundle in Frameworks */,
 				FB08B5331CAA854B005466D9 /* FBAudienceNetwork.framework in Frameworks */,
@@ -332,7 +333,6 @@
 				FB08B5351CAA854B005466D9 /* FBSDKLoginKit.framework in Frameworks */,
 				FB08B5361CAA854B005466D9 /* FBSDKShareKit.framework in Frameworks */,
 				FB9E9C271CA3C7A10007ACDA /* ImageIO.framework in Frameworks */,
-				FB9E9C251CA3C79A0007ACDA /* MessageUI.framework in Frameworks */,
 				FB9E9C231CA3C7920007ACDA /* QuartzCore.framework in Frameworks */,
 				FB9E9C211CA3C7870007ACDA /* CoreGraphics.framework in Frameworks */,
 				9D1418A31011026419A6EA48 /* libPods-EffortListen.a in Frameworks */,

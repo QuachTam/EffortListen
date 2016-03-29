@@ -26,16 +26,23 @@
     return instance;
 }
 
+- (BOOL)isAvailable {
+    if (self.videoController) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void)showVideoWithFrame:(CGRect)frame{
     __weak typeof(self)weakSelf = self;
-    if (!self.videoController) {
-        self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
-        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-        [self.videoController setDimissCompleteBlock:^{
-            weakSelf.videoController = nil;
-        }];
-        [self.videoController showInWindow];
-    }
+    self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
+    [self.videoController setDimissCompleteBlock:^{
+        weakSelf.videoController = nil;
+        if (weakSelf.dimissCompleteBlock) {
+            weakSelf.dimissCompleteBlock();
+        }
+    }];
+    [self.videoController showInWindow];
 }
 
 - (void)playWithURLString:(NSString *)urlString {
