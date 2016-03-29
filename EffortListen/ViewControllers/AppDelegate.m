@@ -28,7 +28,6 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
     [QBSettings setAuthSecret:kAuthSecret];
     [QBSettings setAccountKey:kAccountKey];
     [QBSettings setChatDNSLookupCacheEnabled:YES];
-    
     // Enables Quickblox REST API calls debug console output
     [QBSettings setLogLevel:QBLogLevelDebug];
     

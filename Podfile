@@ -7,4 +7,5 @@ target 'EffortListen' do
     pod 'KRVideoPlayer'
     pod 'PureLayout'
     pod 'Google-Mobile-Ads-SDK'
+    pod 'SwipeBack'
 end

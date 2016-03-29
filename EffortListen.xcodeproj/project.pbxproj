@@ -25,6 +25,14 @@
 		FB3036D01CA1673800186849 /* CustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CB1CA1673800186849 /* CustomFooter.m */; };
 		FB3036D11CA1673800186849 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036CD1CA1673800186849 /* CustomHeader.m */; };
 		FB3036D41CA1677F00186849 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3036D31CA1677F00186849 /* Common.m */; };
+		FB4410DE1CAA36AE00176306 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */; };
+		FB4410DF1CAA36AE00176306 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */; };
+		FB4410E21CAA392D00176306 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4410E01CAA392D00176306 /* menu@3x.png */; };
+		FB4410E31CAA392D00176306 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4410E11CAA392D00176306 /* menu@2x.png */; };
+		FB4410E71CAA3A0900176306 /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410E61CAA3A0900176306 /* LeftTableViewController.m */; };
+		FB4410EA1CAA3A4F00176306 /* LeftCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410E91CAA3A4F00176306 /* LeftCustomCell.m */; };
+		FB4410ED1CAA3F5A00176306 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410EC1CAA3F5A00176306 /* BaseViewController.m */; };
+		FB4410F01CAA423500176306 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4410EF1CAA423500176306 /* AboutViewController.m */; };
 		FB6763F21CA24EC700344306 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763F11CA24EC700344306 /* BookViewController.m */; };
 		FB6763F91CA2868800344306 /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763F81CA2868800344306 /* BookService.m */; };
 		FB6763FC1CA2A61100344306 /* PlaySoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */; };
@@ -111,7 +119,6 @@
 		FBFC2FAA1CA52AD50043F354 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA81CA52AD50043F354 /* back@3x.png */; };
 		FBFC2FAD1CA536820043F354 /* setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FAB1CA536820043F354 /* setting@3x.png */; };
 		FBFC2FAE1CA536820043F354 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FAC1CA536820043F354 /* setting@2x.png */; };
-		FBFC2FB11CA538410043F354 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC2FB01CA538410043F354 /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +157,20 @@
 		FB3036CD1CA1673800186849 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
 		FB3036D21CA1677F00186849 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		FB3036D31CA1677F00186849 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		FB4410DA1CAA36AE00176306 /* CustomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationController.h; sourceTree = "<group>"; };
+		FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationController.m; sourceTree = "<group>"; };
+		FB4410DC1CAA36AE00176306 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		FB4410E01CAA392D00176306 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
+		FB4410E11CAA392D00176306 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		FB4410E51CAA3A0900176306 /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
+		FB4410E61CAA3A0900176306 /* LeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewController.m; sourceTree = "<group>"; };
+		FB4410E81CAA3A4F00176306 /* LeftCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftCustomCell.h; sourceTree = "<group>"; };
+		FB4410E91CAA3A4F00176306 /* LeftCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftCustomCell.m; sourceTree = "<group>"; };
+		FB4410EB1CAA3F5A00176306 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FB4410EC1CAA3F5A00176306 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		FB4410EE1CAA423500176306 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		FB4410EF1CAA423500176306 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		FB6763F01CA24EC700344306 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		FB6763F11CA24EC700344306 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		FB6763F71CA2868800344306 /* BookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookService.h; sourceTree = "<group>"; };
@@ -270,8 +291,6 @@
 		FBFC2FA81CA52AD50043F354 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
 		FBFC2FAB1CA536820043F354 /* setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@3x.png"; sourceTree = "<group>"; };
 		FBFC2FAC1CA536820043F354 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
-		FBFC2FAF1CA538410043F354 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		FBFC2FB01CA538410043F354 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +333,8 @@
 		A57718011CA18C5D00102307 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB4410E41CAA3A0900176306 /* LeftViewController */,
+				FB4410D91CAA36AE00176306 /* SWRevealViewController */,
 				A57718021CA18C5D00102307 /* AppDelegate.h */,
 				A57718031CA18C5D00102307 /* AppDelegate.m */,
 				A57718061CA18C5D00102307 /* LoginViewController.h */,
@@ -326,8 +347,10 @@
 				FB6763FB1CA2A61100344306 /* PlaySoundViewController.m */,
 				FB9E9D161CA3DAE10007ACDA /* SuggestViewController.h */,
 				FB9E9D171CA3DAE10007ACDA /* SuggestViewController.m */,
-				FBFC2FAF1CA538410043F354 /* SettingViewController.h */,
-				FBFC2FB01CA538410043F354 /* SettingViewController.m */,
+				FB4410EE1CAA423500176306 /* AboutViewController.h */,
+				FB4410EF1CAA423500176306 /* AboutViewController.m */,
+				FB4410EB1CAA3F5A00176306 /* BaseViewController.h */,
+				FB4410EC1CAA3F5A00176306 /* BaseViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -395,6 +418,8 @@
 		FB3036C21CA15E5600186849 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				FB4410E81CAA3A4F00176306 /* LeftCustomCell.h */,
+				FB4410E91CAA3A4F00176306 /* LeftCustomCell.m */,
 				FB3036D21CA1677F00186849 /* Common.h */,
 				FB3036D31CA1677F00186849 /* Common.m */,
 				FB3036C61CA1673800186849 /* CustomCellBackground.h */,
@@ -409,6 +434,26 @@
 				FB3036C41CA15E7300186849 /* FolderTableViewCell.m */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		FB4410D91CAA36AE00176306 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FB4410DA1CAA36AE00176306 /* CustomAnimationController.h */,
+				FB4410DB1CAA36AE00176306 /* CustomAnimationController.m */,
+				FB4410DC1CAA36AE00176306 /* SWRevealViewController.h */,
+				FB4410DD1CAA36AE00176306 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		FB4410E41CAA3A0900176306 /* LeftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FB4410E51CAA3A0900176306 /* LeftTableViewController.h */,
+				FB4410E61CAA3A0900176306 /* LeftTableViewController.m */,
+			);
+			path = LeftViewController;
 			sourceTree = "<group>";
 		};
 		FB6763F61CA284A600344306 /* Services */ = {
@@ -535,6 +580,8 @@
 		FB9E9D091CA3D3BD0007ACDA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FB4410E01CAA392D00176306 /* menu@3x.png */,
+				FB4410E11CAA392D00176306 /* menu@2x.png */,
 				FBFC2FAB1CA536820043F354 /* setting@3x.png */,
 				FBFC2FAC1CA536820043F354 /* setting@2x.png */,
 				FBFC2FA71CA52AD50043F354 /* back@2x.png */,
@@ -604,6 +651,12 @@
 				TargetAttributes = {
 					FB3036931CA14AE300186849 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SVFHEKP5R7;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -642,6 +695,7 @@
 				FB9E9C971CA3C7F30007ACDA /* Reader-Mark-N.png in Resources */,
 				FB9E9D0C1CA3D3CF0007ACDA /* cancel@3x.png in Resources */,
 				FBFC2FAE1CA536820043F354 /* setting@2x.png in Resources */,
+				FB4410E31CAA392D00176306 /* menu@2x.png in Resources */,
 				FB9E9CA11CA3C7F30007ACDA /* Reader-Thumbs@2x.png in Resources */,
 				FB9E9CA31CA3C7F30007ACDA /* Localizable.strings in Resources */,
 				FB9E9C8E1CA3C7F30007ACDA /* Reader-Button-N.png in Resources */,
@@ -682,6 +736,7 @@
 				FB9E9C851CA3C7F30007ACDA /* AppIcon-152.png in Resources */,
 				FB9E9C961CA3C7F30007ACDA /* Reader-Export@3x.png in Resources */,
 				FB9E9C8D1CA3C7F30007ACDA /* Reader-Button-H@3x.png in Resources */,
+				FB4410E21CAA392D00176306 /* menu@3x.png in Resources */,
 				FB9E9CA41CA3C7F30007ACDA /* Reader-App.storyboard in Resources */,
 				FB3036A21CA14AE300186849 /* Main.storyboard in Resources */,
 				FB9E9D151CA3D8E70007ACDA /* brightLight@2x.png in Resources */,
@@ -752,14 +807,16 @@
 				FB3036BF1CA15C6700186849 /* ModelItem.m in Sources */,
 				FB3036C11CA15C6700186849 /* Storage.m in Sources */,
 				FB9E9CAA1CA3C7F30007ACDA /* ReaderContentView.m in Sources */,
+				FB4410ED1CAA3F5A00176306 /* BaseViewController.m in Sources */,
 				FB9E9D291CA3F9040007ACDA /* PlaySound.m in Sources */,
+				FB4410F01CAA423500176306 /* AboutViewController.m in Sources */,
 				FB9E9D211CA3E0E20007ACDA /* CommonFeature.m in Sources */,
 				FB3036C01CA15C6700186849 /* ObjectsPaginator.m in Sources */,
 				FB9E9CB21CA3C7F30007ACDA /* ReaderThumbRender.m in Sources */,
+				FB4410DF1CAA36AE00176306 /* SWRevealViewController.m in Sources */,
 				FB9E9CB51CA3C7F30007ACDA /* ReaderThumbView.m in Sources */,
 				FB9E9CB91CA3C7F30007ACDA /* UIXToolbarView.m in Sources */,
 				FB9E9CAE1CA3C7F30007ACDA /* ReaderMainToolbar.m in Sources */,
-				FBFC2FB11CA538410043F354 /* SettingViewController.m in Sources */,
 				FB9E9CB81CA3C7F30007ACDA /* ThumbsViewController.m in Sources */,
 				FB6763F91CA2868800344306 /* BookService.m in Sources */,
 				FB9E9CA81CA3C7F30007ACDA /* ReaderContentPage.m in Sources */,
@@ -777,6 +834,8 @@
 				FB6763FC1CA2A61100344306 /* PlaySoundViewController.m in Sources */,
 				FB3036D11CA1673800186849 /* CustomHeader.m in Sources */,
 				FB3036C51CA15E7300186849 /* FolderTableViewCell.m in Sources */,
+				FB4410EA1CAA3A4F00176306 /* LeftCustomCell.m in Sources */,
+				FB4410E71CAA3A0900176306 /* LeftTableViewController.m in Sources */,
 				FB3036CE1CA1673800186849 /* CustomCellBackground.m in Sources */,
 				FB9E9D1B1CA3DEBD0007ACDA /* SuggestService.m in Sources */,
 				FB9E9CA91CA3C7F30007ACDA /* ReaderContentTile.m in Sources */,
@@ -784,6 +843,7 @@
 				A57718091CA18C5D00102307 /* FolderViewController.m in Sources */,
 				FB3036991CA14AE300186849 /* main.m in Sources */,
 				FB9E9CB01CA3C7F30007ACDA /* ReaderThumbFetch.m in Sources */,
+				FB4410DE1CAA36AE00176306 /* CustomAnimationController.m in Sources */,
 				FB9E9D2C1CA3FC860007ACDA /* ReaderPDF.m in Sources */,
 				FB3036CF1CA1673800186849 /* CustomCellCommon.m in Sources */,
 				A57718081CA18C5D00102307 /* AppDelegate.m in Sources */,
@@ -914,6 +974,8 @@
 			baseConfigurationReference = E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EffortListen/EffortListen-Prefix.pch";
 				INFOPLIST_FILE = EffortListen/Info.plist;
@@ -921,6 +983,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qsoft.EffortListen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -929,6 +992,8 @@
 			baseConfigurationReference = 69FA443079B7DFA8FA373DD9 /* Pods-EffortListen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EffortListen/EffortListen-Prefix.pch";
 				INFOPLIST_FILE = EffortListen/Info.plist;
@@ -936,6 +1001,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qsoft.EffortListen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

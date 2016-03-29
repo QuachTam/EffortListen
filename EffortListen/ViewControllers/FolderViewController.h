@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
+#import "BaseViewController.h"
 
-@interface FolderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface FolderViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @end

@@ -30,6 +30,7 @@
     __weak typeof(self)weakSelf = self;
     if (!self.videoController) {
         self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
+        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
         [self.videoController setDimissCompleteBlock:^{
             weakSelf.videoController = nil;
         }];

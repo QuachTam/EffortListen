@@ -56,7 +56,7 @@ const NSInteger showAdBottom = 1;
     bannerView_.rootViewController = parent;
     bannerView_.autoloadEnabled = YES;
     GADRequest *request = [GADRequest request];
-    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
+//    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
     [bannerView_ loadRequest:request];
     [viewBannerAdMod addSubview:bannerView_];
     if (type==showAdTop) {
@@ -102,7 +102,7 @@ const NSInteger showAdBottom = 1;
     self.interstitial = [[DFPInterstitial alloc] initWithAdUnitID:ClientAppID];
     self.interstitial.delegate = self;
     GADRequest *request = [GADRequest request];
-    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
+//    request.testDevices = [NSArray arrayWithObjects:@"Simulator",nil];
     [self.interstitial loadRequest:request];
 }
 
@@ -115,6 +115,9 @@ const NSInteger showAdBottom = 1;
 - (void)interstitial:(DFPInterstitial *)interstitial
 didFailToReceiveAdWithError:(GADRequestError *)error {
     NSLog(@"interstitialDidFailToReceiveAdWithError: %@", [error localizedDescription]);
+    if (self.interstitialDidDismissScreen) {
+        self.interstitialDidDismissScreen();
+    }
 }
 
 - (void)interstitialDidDismissScreen:(DFPInterstitial *)interstitial {

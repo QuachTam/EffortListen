@@ -22,24 +22,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController ) {
+        [self.menuButton addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
     // Do any additional setup after loading the view.
     [SVProgressHUD showWithStatus:@"Loading"];
+    [[Storage instance].folderList removeAllObjects];
+    
     self.paginator = [[ObjectsPaginator alloc] initWithPageSize:10 delegate:self];
     [self.paginator fetchFirstPage];
     self.title = @"Folders";
     [self rightButton];
-    [self leftButton];
+    [self footerView];
     AdmodManager *adManager = [AdmodManager sharedInstance];
     [adManager showAdmodInViewController];
-}
-
-- (void)leftButton {
-    UIButton *btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
-    [btnLeft setFrame:CGRectMake(0, 0, 25, 25)];
-    [btnLeft setImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal];
-    [btnLeft addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnLeft];
-    [self.navigationItem setLeftBarButtonItem:leftBarButton];
 }
 
 - (void)rightButton {
@@ -49,10 +48,6 @@
     [btnRight addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButton=[[UIBarButtonItem alloc]initWithCustomView:btnRight];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
-}
-
-- (void)settingAction {
-    [self performSegueWithIdentifier:@"setting" sender:nil];
 }
 
 - (void)rightAction {
@@ -91,6 +86,16 @@
 }
 
 #pragma mark - Table view data source
+
+- (void)footerView {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    self.tbView.tableFooterView = header;
+    
+    //update the header's frame and set it again
+    CGRect newFrame = self.tbView.tableFooterView.frame;
+    newFrame.size.height = newFrame.size.height;
+    self.tbView.tableFooterView.frame = newFrame;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -138,8 +143,8 @@
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    if (size.height<44) {
-        size.height = 44;
+    if (size.height<67) {
+        size.height = 67;
     }
     return size.height + 1.0f; // Add 1.0f for the cell separator height
 }

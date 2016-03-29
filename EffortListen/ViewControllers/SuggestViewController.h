@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SuggestViewController : UIViewController
+@interface SuggestViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UITextField *bookNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *bookTypeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *linkDownloadTextField;

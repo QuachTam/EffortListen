@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <KRVideoPlayerController.h>
+#import "BaseViewController.h"
 
-@interface PlaySoundViewController : UIViewController
+@interface PlaySoundViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)readBookAction:(id)sender;

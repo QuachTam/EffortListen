@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface BookViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface BookViewController : BaseViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
 @property (nonatomic, strong) QBCOCustomObject *customObject;
 @end

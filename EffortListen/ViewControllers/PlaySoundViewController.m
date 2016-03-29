@@ -28,6 +28,8 @@
     
     self.selectedIndexPath = self.currentIndexBook;
     [self setUpselectedCellIndexPath];
+    AdmodManager *adManager = [AdmodManager sharedInstance];
+    [adManager showAdmodInViewController];
 }
 
 - (void)getBlobWithID:(NSInteger)ID success:(void(^)(QBCBlob *blob))success fail:(void(^)(void))fail{

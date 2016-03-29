@@ -22,5 +22,5 @@
     #import <ImageIO/ImageIO.h>
     #import "CommonFeature.h"
     #import "AdmodManager.h"
-
+    #import <SwipeBack/SwipeBack.h>
 #endif
