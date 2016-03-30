@@ -37,8 +37,18 @@
 #pragma mark - Table view data source
 
 - (void)headerView {
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 67)];
+    header.backgroundColor = [UIColor colorWithRed:139/255.0 green:195/255.0 blue:74/255.0 alpha:1];
     self.tbView.tableHeaderView = header;
+    
+    UIImageView *imageDefautl = [[UIImageView alloc] initWithFrame:CGRectMake(15, 20, 40, 40)];
+    [imageDefautl setImage:[UIImage imageNamed:@"IconDefault"]];
+    [header addSubview:imageDefautl];
+    
+    imageDefautl.layer.cornerRadius = imageDefautl.frame.size.width/2;
+    imageDefautl.layer.borderColor = [[UIColor whiteColor] CGColor];
+    imageDefautl.layer.borderWidth = 2;
+    imageDefautl.layer.masksToBounds = YES;
     
     //update the header's frame and set it again
     CGRect newFrame = self.tbView.tableHeaderView.frame;

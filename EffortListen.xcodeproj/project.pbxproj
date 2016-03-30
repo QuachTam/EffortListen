@@ -11,6 +11,7 @@
 		A57718081CA18C5D00102307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57718031CA18C5D00102307 /* AppDelegate.m */; };
 		A57718091CA18C5D00102307 /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57718051CA18C5D00102307 /* FolderViewController.m */; };
 		A577180A1CA18C5D00102307 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57718071CA18C5D00102307 /* LoginViewController.m */; };
+		A57E4C121CAC1BD1008623D2 /* IconDefault@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57E4C111CAC1BD1008623D2 /* IconDefault@2x.png */; };
 		FB08B51B1CAA7C25005466D9 /* folder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B5191CAA7C25005466D9 /* folder@3x.png */; };
 		FB08B51C1CAA7C25005466D9 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B51A1CAA7C25005466D9 /* folder@2x.png */; };
 		FB08B51F1CAA7C34005466D9 /* about@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB08B51D1CAA7C34005466D9 /* about@3x.png */; };
@@ -143,6 +144,7 @@
 		A57718051CA18C5D00102307 /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
 		A57718061CA18C5D00102307 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A57718071CA18C5D00102307 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A57E4C111CAC1BD1008623D2 /* IconDefault@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconDefault@2x.png"; sourceTree = "<group>"; };
 		E0D76759AC2F0C7B2F715CED /* Pods-EffortListen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EffortListen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EffortListen/Pods-EffortListen.debug.xcconfig"; sourceTree = "<group>"; };
 		F4630938C6C7D6A5FB65A36B /* libPods-EffortListen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EffortListen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB08B5191CAA7C25005466D9 /* folder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@3x.png"; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 		FB9E9D091CA3D3BD0007ACDA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A57E4C111CAC1BD1008623D2 /* IconDefault@2x.png */,
 				FB08B5241CAA818A005466D9 /* faceBook@3x.png */,
 				FB08B5251CAA818A005466D9 /* faceBook@2x.png */,
 				FB08B51D1CAA7C34005466D9 /* about@3x.png */,
@@ -798,6 +801,7 @@
 				FB9E9CA41CA3C7F30007ACDA /* Reader-App.storyboard in Resources */,
 				FB3036A21CA14AE300186849 /* Main.storyboard in Resources */,
 				FB9E9D151CA3D8E70007ACDA /* brightLight@2x.png in Resources */,
+				A57E4C121CAC1BD1008623D2 /* IconDefault@2x.png in Resources */,
 				FB9E9C841CA3C7F30007ACDA /* AppIcon-144.png in Resources */,
 				FB9E9C921CA3C7F30007ACDA /* Reader-Email@2x.png in Resources */,
 			);
@@ -1073,7 +1077,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqsoft.effortlisten;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "efc25ccb-2432-4258-a09b-b36599bb7394";
 			};
 			name = Debug;
 		};
@@ -1101,7 +1105,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hqsoft.effortlisten;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "efc25ccb-2432-4258-a09b-b36599bb7394";
 			};
 			name = Release;
 		};

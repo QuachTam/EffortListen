@@ -73,10 +73,8 @@
             }
         }
     } statusBlock:^(QBRequest * _Nonnull request, QBRequestStatus * _Nullable status) {
-        if (status.percentOfCompletion<1) {
-            if (statusBlock) {
-                statusBlock (status);
-            }
+        if (statusBlock) {
+            statusBlock (status);
         }
     } errorBlock:^(QBResponse * _Nonnull response) {
         if (success) {

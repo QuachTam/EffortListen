@@ -152,18 +152,21 @@ NSInteger TYPE_DATA_PDF = 1;
         [SVProgressHUD dismiss];
         [self readerPDFWithDocumentFile:documentFile];
     }else{
-        [SVProgressHUD showProgress:0.0 status:NSLocalizedString(@"keyDownloading", nil)];
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"keyDownloading", nil)];
         BookService *serviceBook = [BookService instance];
         [serviceBook downloadFileWith:[object_custom.fields[@"bookID"]integerValue] statusBlock:^(QBRequestStatus *status) {
-            [SVProgressHUD showProgress:status.percentOfCompletion status:NSLocalizedString(@"keyDownloading", nil)];
-            if (status.percentOfCompletion==1) {
-                [SVProgressHUD dismiss];
-            }
+//            if(status.percentOfCompletion < 1.0f){
+//                [SVProgressHUD showProgress:status.percentOfCompletion status:NSLocalizedString(@"keyDownloading", nil)];
+//            } else {
+//                [SVProgressHUD dismiss];
+//            }
         } success:^(BOOL isSuccess) {
             [SVProgressHUD dismiss];
             if (isSuccess) {
-                NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
-                [self readerPDFWithDocumentFile:documentFile];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0), dispatch_get_main_queue(), ^{
+                     NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
+                    [self readerPDFWithDocumentFile:documentFile];
+                });
             }else{
                 [CommonFeature showAlertTitle:NSLocalizedString(@"keyEffortListen", nil) Message:NSLocalizedString(@"keyLoadFileError", nil) duration:2.0 showIn:self blockDismissView:nil];
             }
