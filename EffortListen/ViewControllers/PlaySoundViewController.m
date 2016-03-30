@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Read Book";
+    self.title = NSLocalizedString(@"keyReadBook", nil);
     
     self.selectedIndexPath = self.currentIndexBook;
     [self setUpselectedCellIndexPath];
@@ -101,7 +101,7 @@
     QBCOCustomObject *object_custom = [self.bookList objectAtIndex:indexPath.row];
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     self.selectedIndexPath = indexPath.row;
-    [SVProgressHUD showWithStatus:@"Loading"];
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoading", nil)];
     [self getBlobWithID:[object_custom.fields[@"contentID"] integerValue] success:^(QBCBlob *blob) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
@@ -118,7 +118,7 @@
             [play playWithURLString:blob.privateUrl];
         }
     } fail:^{
-        [SVProgressHUD showErrorWithStatus:@"Server error"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keyServerError", nil)];
     }];
 }
 
@@ -181,10 +181,10 @@
         ReaderPDF *reader = [ReaderPDF instance];
         [reader ShowReaderDoccumentWithName:documentFile inVC:self];
     }else{
-        [SVProgressHUD showProgress:0.0 status:@"Downloading..."];
+        [SVProgressHUD showProgress:0.0 status:NSLocalizedString(@"keyDownloading", nil)];
         BookService *serviceBook = [BookService instance];
         [serviceBook downloadFileWith:[object_custom.fields[@"bookID"]integerValue] statusBlock:^(QBRequestStatus *status) {
-            [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
+            [SVProgressHUD showProgress:status.percentOfCompletion status:NSLocalizedString(@"keyDownloading", nil)];
         } success:^(BOOL isSuccess) {
             [SVProgressHUD dismiss];
             if (isSuccess) {
@@ -192,7 +192,7 @@
                 ReaderPDF *reader = [ReaderPDF instance];
                 [reader ShowReaderDoccumentWithName:documentFile inVC:self];
             }else{
-                [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Load file error" duration:2.0 showIn:self blockDismissView:nil];
+                [CommonFeature showAlertTitle:NSLocalizedString(@"keyEffortListen", nil) Message:NSLocalizedString(@"keyLoadFileError", nil) duration:2.0 showIn:self blockDismissView:nil];
             }
         }];
     }

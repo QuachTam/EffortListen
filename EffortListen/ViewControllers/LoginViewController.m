@@ -16,11 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     QBUUser *currentUser = [QBUUser new];
     currentUser.email = @"mr.tamqn87hb@gmail.com";
     currentUser.password = @"Quachtam87";
-    [SVProgressHUD showWithStatus:@"Logging in"];
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoggingIn", nil)];
     __weak __typeof(self)weakSelf = self;
     [QMServicesManager.instance logInWithUser:currentUser completion:^(BOOL success, NSString *errorMessage) {
         if (success) {
@@ -31,31 +32,31 @@
             [SVProgressHUD showErrorWithStatus:@"Error"];
         }
         
-        QBUpdateUserParameters *updateParameters = [QBUpdateUserParameters new];
-        updateParameters.website = @"www.mysite.com";
-        updateParameters.phone = @"213215432132";
-        NSDictionary *contentDictionary = @{@"linkAppstore":@"https://developers.facebook.com/quickstarts/1040136779400633/?platform=ios", @"description":@"asdfasdfasdfasdfasdf"};
-        NSData *data = [NSJSONSerialization dataWithJSONObject:contentDictionary options:NSJSONWritingPrettyPrinted error:nil];
-        NSString *jsonStr = [[NSString alloc] initWithData:data
-                                                  encoding:NSUTF8StringEncoding];
-        updateParameters.customData = jsonStr;
-        
-        [QBRequest updateCurrentUser:updateParameters successBlock:^(QBResponse *response, QBUUser *user) {
-            NSLog(@"sdfsdf");
-        } errorBlock:^(QBResponse *response) {
-            NSLog(@"ssssss");
-        }];
+//        QBUpdateUserParameters *updateParameters = [QBUpdateUserParameters new];
+//        updateParameters.website = @"www.mysite.com";
+//        updateParameters.phone = @"0974662046";
+//        NSDictionary *contentDictionary = @{@"linkAppstore":@"https://developers.facebook.com/quickstarts/1040136779400633/?platform=ios", @"description":@"asdfasdfasdfasdfasdf"};
+//        NSData *data = [NSJSONSerialization dataWithJSONObject:contentDictionary options:NSJSONWritingPrettyPrinted error:nil];
+//        NSString *jsonStr = [[NSString alloc] initWithData:data
+//                                                  encoding:NSUTF8StringEncoding];
+//        updateParameters.customData = jsonStr;
+//        
+//        [QBRequest updateCurrentUser:updateParameters successBlock:^(QBResponse *response, QBUUser *user) {
+//            NSLog(@"sdfsdf");
+//        } errorBlock:^(QBResponse *response) {
+//            NSLog(@"ssssss");
+//        }];
     }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
+//    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {

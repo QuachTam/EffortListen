@@ -18,13 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = NSLocalizedString(@"keyAbout", nil);
     self.navigationItem.hidesBackButton = YES;
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController ) {
         [self.menuButton addTarget:self.revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    self.title = @"About";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -51,8 +51,8 @@
     {
         MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
         mail.mailComposeDelegate = self;
-        [mail setSubject:@"Effort Listen"];
-        [mail setMessageBody:@"Here is some main text in the email!" isHTML:NO];
+        [mail setSubject:NSLocalizedString(@"keyEffortListen", nil)];
+        [mail setMessageBody:NSLocalizedString(@"keyHereIsSomeMainTextInTheEmail", nil) isHTML:NO];
         [mail setToRecipients:@[@"mr.tamqn711@gmail.com"]];
         
         [self presentViewController:mail animated:YES completion:NULL];
@@ -68,7 +68,7 @@
     switch (result) {
         case MFMailComposeResultSent:
             NSLog(@"You sent the email.");
-            [SVProgressHUD showSuccessWithStatus:@"Send email success"];
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"keySendEmailSuccess", nil)];
             break;
         case MFMailComposeResultSaved:
             NSLog(@"You saved a draft of this email");
@@ -77,7 +77,7 @@
             NSLog(@"You cancelled sending this email.");
             break;
         case MFMailComposeResultFailed:
-            [SVProgressHUD showErrorWithStatus:@"Send email fail"];
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keySendEmailFail", nil)];
             break;
         default:
             NSLog(@"An error occurred when trying to compose this email");

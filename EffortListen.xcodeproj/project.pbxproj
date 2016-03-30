@@ -127,6 +127,7 @@
 		FB9E9D261CA3F13C0007ACDA /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9E9D241CA3F13C0007ACDA /* play@2x.png */; };
 		FB9E9D291CA3F9040007ACDA /* PlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E9D281CA3F9040007ACDA /* PlaySound.m */; };
 		FB9E9D2C1CA3FC860007ACDA /* ReaderPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */; };
+		FBA676311CABCA7E0009AE7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBA676331CABCA7E0009AE7B /* Localizable.strings */; };
 		FBFC2FA61CA4F5790043F354 /* TQNDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC2FA51CA4F5790043F354 /* TQNDocument.m */; };
 		FBFC2FA91CA52AD50043F354 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA71CA52AD50043F354 /* back@2x.png */; };
 		FBFC2FAA1CA52AD50043F354 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC2FA81CA52AD50043F354 /* back@3x.png */; };
@@ -246,10 +247,7 @@
 		FB9E9C4B1CA3C7F30007ACDA /* Reader-Thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Thumbs.png"; sourceTree = "<group>"; };
 		FB9E9C4C1CA3C7F30007ACDA /* Reader-Thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Thumbs@2x.png"; sourceTree = "<group>"; };
 		FB9E9C4D1CA3C7F30007ACDA /* Reader-Thumbs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Thumbs@3x.png"; sourceTree = "<group>"; };
-		FB9E9C501CA3C7F30007ACDA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB9E9C511CA3C7F30007ACDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FB9E9C521CA3C7F30007ACDA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FB9E9C531CA3C7F30007ACDA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB9E9C541CA3C7F30007ACDA /* Reader-App.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Reader-App.storyboard"; sourceTree = "<group>"; };
 		FB9E9C551CA3C7F30007ACDA /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
 		FB9E9C571CA3C7F30007ACDA /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPDFDocument.h; sourceTree = "<group>"; };
@@ -312,6 +310,19 @@
 		FB9E9D281CA3F9040007ACDA /* PlaySound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySound.m; sourceTree = "<group>"; };
 		FB9E9D2A1CA3FC860007ACDA /* ReaderPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderPDF.h; sourceTree = "<group>"; };
 		FB9E9D2B1CA3FC860007ACDA /* ReaderPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderPDF.m; sourceTree = "<group>"; };
+		FBA676281CABCA2F0009AE7B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		FBA676291CABCA2F0009AE7B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBA6762A1CABCA2F0009AE7B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBA6762B1CABCA4F0009AE7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		FBA6762C1CABCA4F0009AE7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBA6762D1CABCA4F0009AE7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBA6762E1CABCA710009AE7B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		FBA6762F1CABCA710009AE7B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBA676301CABCA710009AE7B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBA676321CABCA7E0009AE7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBA676341CABCA810009AE7B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBA676351CABCA820009AE7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBA676361CABCA830009AE7B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FBFC2FA41CA4F5790043F354 /* TQNDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQNDocument.h; sourceTree = "<group>"; };
 		FBFC2FA51CA4F5790043F354 /* TQNDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQNDocument.m; sourceTree = "<group>"; };
 		FBFC2FA71CA52AD50043F354 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -438,6 +449,7 @@
 				FB9E9D091CA3D3BD0007ACDA /* Images */,
 				FB3036B11CA14BDF00186849 /* EffortListen-Prefix.pch */,
 				FB3036981CA14AE300186849 /* main.m */,
+				FBA676331CABCA7E0009AE7B /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -706,9 +718,9 @@
 			knownRegions = (
 				en,
 				Base,
-				de,
-				es,
-				fr,
+				vi,
+				ja,
+				ko,
 			);
 			mainGroup = FB30368B1CA14AE300186849;
 			productRefGroup = FB3036951CA14AE300186849 /* Products */;
@@ -756,6 +768,7 @@
 				FB9E9C861CA3C7F30007ACDA /* AppIcon-167.png in Resources */,
 				FB9E9D111CA3D4B60007ACDA /* bookShow@2x.png in Resources */,
 				FB9E9D251CA3F13C0007ACDA /* play@3x.png in Resources */,
+				FBA676311CABCA7E0009AE7B /* Localizable.strings in Resources */,
 				FB9E9C931CA3C7F30007ACDA /* Reader-Email@3x.png in Resources */,
 				FB9E9C911CA3C7F30007ACDA /* Reader-Email.png in Resources */,
 				FB9E9C941CA3C7F30007ACDA /* Reader-Export.png in Resources */,
@@ -907,6 +920,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB3036A11CA14AE300186849 /* Base */,
+				FBA676281CABCA2F0009AE7B /* vi */,
+				FBA6762B1CABCA4F0009AE7B /* ja */,
+				FBA6762E1CABCA710009AE7B /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -915,6 +931,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB3036A91CA14AE300186849 /* Base */,
+				FBA676291CABCA2F0009AE7B /* vi */,
+				FBA6762C1CABCA4F0009AE7B /* ja */,
+				FBA6762F1CABCA710009AE7B /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -922,10 +941,21 @@
 		FB9E9C4F1CA3C7F30007ACDA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FB9E9C501CA3C7F30007ACDA /* de */,
 				FB9E9C511CA3C7F30007ACDA /* en */,
-				FB9E9C521CA3C7F30007ACDA /* es */,
-				FB9E9C531CA3C7F30007ACDA /* fr */,
+				FBA6762A1CABCA2F0009AE7B /* vi */,
+				FBA6762D1CABCA4F0009AE7B /* ja */,
+				FBA676301CABCA710009AE7B /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		FBA676331CABCA7E0009AE7B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBA676321CABCA7E0009AE7B /* en */,
+				FBA676341CABCA810009AE7B /* vi */,
+				FBA676351CABCA820009AE7B /* ja */,
+				FBA676361CABCA830009AE7B /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -950,6 +980,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -969,9 +1000,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -994,6 +1026,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1007,8 +1040,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1021,6 +1055,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1048,6 +1083,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

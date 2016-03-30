@@ -31,7 +31,7 @@
     }
     
     // Do any additional setup after loading the view.
-    self.title = @"Folders";
+    self.title = NSLocalizedString(@"keyFolders", nil);
     [self rightButton];
     [self footerView];
     
@@ -56,7 +56,7 @@
     [super viewDidAppear:animated];
     if (self.isFetchData) {
         self.isFetchData = NO;
-        [SVProgressHUD showWithStatus:@"Loading"];
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoading", nil)];
         [self performSelector:@selector(fetchData) withObject:nil afterDelay:0.1];
     }
 }
@@ -117,7 +117,7 @@
 #pragma mark Paginator
 
 - (void)fetchNextPage {
-    [SVProgressHUD showWithStatus:@"Loading"];
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoading", nil)];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.paginator fetchNextPage];
     });
@@ -162,7 +162,7 @@
     // some code for initializing cell content
     QBCOCustomObject *object_custom = [Storage instance].folderList[indexPath.row];
     cell.name.text = object_custom.fields[@"name"];
-    cell.numberBook.text = [NSString stringWithFormat:@"%ld", [object_custom.fields[@"itemID"] count]];
+    cell.numberBook.text = [NSString stringWithFormat:@"%ld", (long)[object_custom.fields[@"itemID"] count]];
 }
 
 #pragma mark - Table view delegate

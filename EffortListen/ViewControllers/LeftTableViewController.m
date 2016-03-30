@@ -28,7 +28,7 @@
 
 - (NSArray *)itemsArray {
     if (!_itemsArray) {
-        _itemsArray = @[@"Folders", @"About Us"];
+        _itemsArray = @[NSLocalizedString(@"keyFolders", nil), NSLocalizedString(@"keyAboutUs", nil)];
         _iconItemsArray = @[@"folder", @"about"];
     }
     return _itemsArray;

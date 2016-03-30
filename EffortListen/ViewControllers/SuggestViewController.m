@@ -18,13 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Suggest Book PDF";
+    self.title = NSLocalizedString(@"keySuggestBookPDF", nil);
     self.sendButton.layer.cornerRadius = 4.0;
     self.sendButton.layer.masksToBounds = YES;
     
     self.viewSuggest.layer.cornerRadius = 4.0;
     self.viewSuggest.layer.masksToBounds = YES;
     [self backButton];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -97,20 +99,20 @@
         }
         
         if (isValid) {
-            [SVProgressHUD showWithStatus:@"Sending..."];
+            [SVProgressHUD showWithStatus:NSLocalizedString(@"keySending", nil)];
             SuggestService *service = [SuggestService instance];
             [service checkDeviceBlock:^(BOOL isBlock) {
                 if (!isBlock) {
                     [service sendSuggestBook:self.bookNameTextField.text bookType:self.bookTypeTextField.text linkDownload:self.linkDownloadTextField.text success:^{
                         [SVProgressHUD dismiss];
-                        [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Thanks your send suggest" duration:2.0 showIn:self blockDismissView:nil];
+                        [CommonFeature showAlertTitle:NSLocalizedString(@"keyEffortListen", nil) Message:NSLocalizedString(@"keyThanksYourSendSuggest", nil) duration:2.0 showIn:self blockDismissView:nil];
                     } fail:^(NSString *message) {
                         [SVProgressHUD dismiss];
-                        [CommonFeature showAlertTitle:@"Effort Listen" Message:message duration:2.0 showIn:self blockDismissView:nil];
+                        [CommonFeature showAlertTitle:NSLocalizedString(@"keyEffortListen", nil) Message:message duration:2.0 showIn:self blockDismissView:nil];
                     }];
                 }else{
                     [SVProgressHUD dismiss];
-                    [CommonFeature showAlertTitle:@"EffortListen" Message:@"Your device is blocked" duration:3.0 showIn:self blockDismissView:nil];
+                    [CommonFeature showAlertTitle:NSLocalizedString(@"keyEffortListen", nil) Message:NSLocalizedString(@"keyYourDeviceIsBlocked", nil) duration:3.0 showIn:self blockDismissView:nil];
                 }
             }];
         }

@@ -27,8 +27,9 @@ NSInteger TYPE_DATA_PDF = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = NSLocalizedString(@"keyFiles", nil);
     self.bookList = [NSArray new];
-    [SVProgressHUD showWithStatus:@"Loading"];
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"keyLoading", nil)];
     BookService *service = [BookService instance];
     [service getListItem:self.customObject.fields[@"itemID"] success:^(NSArray * _Nullable objects) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -37,9 +38,8 @@ NSInteger TYPE_DATA_PDF = 1;
         self.bookList = objects;
         [self.tbView reloadData];
     } fail:^(QBResponse * _Nonnull response) {
-        [SVProgressHUD showErrorWithStatus:@"Server Error"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keyServerError", nil)];
     }];
-    self.title = @"Files";
     [self backButton];
     AdmodManager *adManager = [AdmodManager sharedInstance];
     [adManager showAdmodInViewController];
@@ -152,10 +152,10 @@ NSInteger TYPE_DATA_PDF = 1;
         [SVProgressHUD dismiss];
         [self readerPDFWithDocumentFile:documentFile];
     }else{
-        [SVProgressHUD showProgress:0.0 status:@"Downloading..."];
+        [SVProgressHUD showProgress:0.0 status:NSLocalizedString(@"keyDownloading", nil)];
         BookService *serviceBook = [BookService instance];
         [serviceBook downloadFileWith:[object_custom.fields[@"bookID"]integerValue] statusBlock:^(QBRequestStatus *status) {
-            [SVProgressHUD showProgress:status.percentOfCompletion status:@"Downloading..."];
+            [SVProgressHUD showProgress:status.percentOfCompletion status:NSLocalizedString(@"keyDownloading", nil)];
             if (status.percentOfCompletion==1) {
                 [SVProgressHUD dismiss];
             }
@@ -165,7 +165,7 @@ NSInteger TYPE_DATA_PDF = 1;
                 NSString *documentFile = [document getFileInDirectory:@"PDF_FILES" fileName:[NSString stringWithFormat:@"%ld.pdf", (long)[object_custom.fields[@"bookID"]integerValue]]];
                 [self readerPDFWithDocumentFile:documentFile];
             }else{
-                [CommonFeature showAlertTitle:@"Effort Listen" Message:@"Load file error" duration:2.0 showIn:self blockDismissView:nil];
+                [CommonFeature showAlertTitle:NSLocalizedString(@"keyEffortListen", nil) Message:NSLocalizedString(@"keyLoadFileError", nil) duration:2.0 showIn:self blockDismissView:nil];
             }
         }];
     }
