@@ -27,3 +27,4 @@
 "keyName" = "이름";
 "keyType" = "유형";
 "keyLink" = "링크 다운로드 전자 책";
+"keyLinkStoreNoYet" = "The link hasn't been updated for share this app on appstore!. We will update as soon as possible, Please share later";

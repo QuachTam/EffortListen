@@ -94,16 +94,23 @@
                                                                  options:kNilOptions
                                                                    error:nil];
     if (jsonResponse) {
-        FBSDKLoginManager *loginmanager= [[FBSDKLoginManager alloc]init];
-        [loginmanager logOut];
-        FaceBookServicesManager *faceManager = [FaceBookServicesManager sharedInstance];
-        [faceManager loginFaceBookWithPermission:@[@"public_profile", @"email", @"user_friends"] success:^(FaceBookInformation *faceInfo) {
-            [faceManager shareLink:[jsonResponse valueForKey:@"linkAppstore"] inViewController:self];
-        } fail:^(NSError *error) {
-            NSLog(@"fail");
-        } cancel:^{
-            NSLog(@"cancel");
-        }];
+        NSString *linkStore = [jsonResponse valueForKey:@"linkAppstore"];
+        if (linkStore.length) {
+            FBSDKLoginManager *loginmanager= [[FBSDKLoginManager alloc]init];
+            [loginmanager logOut];
+            FaceBookServicesManager *faceManager = [FaceBookServicesManager sharedInstance];
+            [faceManager loginFaceBookWithPermission:@[@"public_profile", @"email", @"user_friends"] success:^(FaceBookInformation *faceInfo) {
+                [faceManager shareLink:[jsonResponse valueForKey:@"linkAppstore"] inViewController:self];
+            } fail:^(NSError *error) {
+                NSLog(@"fail");
+            } cancel:^{
+                NSLog(@"cancel");
+            }];
+        }else{
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keyLinkStoreNoYet", nil)];
+        }
+    }else {
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"keyLinkStoreNoYet", nil)];
     }
 }
 
@@ -186,8 +193,8 @@
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    if (size.height<67) {
-        size.height = 67;
+    if (size.height<50) {
+        size.height = 50;
     }
     return size.height + 1.0f; // Add 1.0f for the cell separator height
 }

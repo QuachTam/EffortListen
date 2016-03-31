@@ -19,6 +19,14 @@
     return _shareInstance;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.shouldRotate = NO;
+    }
+    return self;
+}
+
 + (void)setShadownWithBoderWidth:(NSInteger)width view:(UIView*)view{
     CGRect frames = view.bounds;
     frames.origin.x -=width;

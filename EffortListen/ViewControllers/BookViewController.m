@@ -55,6 +55,9 @@ NSInteger TYPE_DATA_PDF = 1;
     newFrame.size.height = newFrame.size.height;
     self.tbView.tableFooterView.frame = newFrame;
 }
+
+
+
 - (void)backButton {
     UIButton *btnBack=[UIButton buttonWithType:UIButtonTypeCustom];
     [btnBack setFrame:CGRectMake(0, 0, 25, 25)];
@@ -66,6 +69,7 @@ NSInteger TYPE_DATA_PDF = 1;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [UIViewController attemptRotationToDeviceOrientation];
 }
 
 - (void)backView {
@@ -126,8 +130,8 @@ NSInteger TYPE_DATA_PDF = 1;
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    if (size.height<44) {
-        size.height = 44;
+    if (size.height<50) {
+        size.height = 50;
     }
     return size.height + 1.0f; // Add 1.0f for the cell separator height
 }

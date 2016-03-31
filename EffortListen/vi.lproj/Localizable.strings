@@ -26,3 +26,4 @@
 "keyName" = "Tên";
 "keyType" = "Loại sách";
 "keyLink" = "Đường dẫn download sách";
+"keyLinkStoreNoYet" = "Xin lỗi link appstore chưa được cập nhật, Chúng tôi sẽ cập nhật sớm nhất";

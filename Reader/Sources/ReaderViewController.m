@@ -424,12 +424,16 @@ static NSString *ClientAppID = @"ca-app-pub-9259023205127043/7494555614";
 	[UIApplication sharedApplication].idleTimerDisabled = YES;
 
 #endif // end of READER_DISABLE_IDLE Option
+    CommonFeature *common = [CommonFeature shareInstance];
+    common.shouldRotate = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-
+    CommonFeature *common = [CommonFeature shareInstance];
+    common.shouldRotate = NO;
+    
 	lastAppearSize = self.view.bounds.size; // Track view size
 
 #if (READER_DISABLE_IDLE == TRUE) // Option

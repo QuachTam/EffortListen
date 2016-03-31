@@ -12,6 +12,7 @@ static NSString *format_date_type_yyyy_mm_dd_hh_mm = @"dd-MM-yyyy HH:mm";
 static NSString *format_date_type_dd_mm_yyyy = @"dd-MM-yyyy";
 
 @interface CommonFeature : NSObject
+@property (assign, nonatomic) BOOL shouldRotate;
 + (CommonFeature*)shareInstance;
 + (void)setShadownWithBoderWidth:(NSInteger)width view:(UIView*)view;
 + (NSString*)convertDateToString:(NSDate *)date withFormat:(NSString*)formatDate;

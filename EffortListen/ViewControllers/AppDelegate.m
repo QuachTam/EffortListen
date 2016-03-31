@@ -44,6 +44,15 @@ NSString *const kAccountKey     = @"dNmL8ohoACNrhHZ6KWAQ";
     return YES;
 }
 
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    CommonFeature *common = [CommonFeature shareInstance];
+    if (!common.shouldRotate) {
+        return UIInterfaceOrientationMaskPortrait;
+    }else{
+        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+    }
+}
+
 #pragma mark -
 #pragma mark - SCFacebook Handle
 
